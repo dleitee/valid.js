@@ -1,0 +1,23 @@
+# editorconfig.org
+root = true
+
+# All files
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+indent_style = space
+
+# CSS Files based on https://github.com/necolas/idiomatic-css
+[*.{css, scss, styl, less}]
+indent_size = 4
+
+# JS Files based on https://github.com/rwaldron/idiomatic.js
+[*.{js}]
+indent_size = 2
+
+# JSON Files
+[*.{json,}]
+indent_size = 2
+insert_final_newline = false
