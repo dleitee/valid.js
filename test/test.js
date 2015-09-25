@@ -9,7 +9,7 @@ describe('Library Validate', () => {
       expect(validate).to.be.a('function')
       expect(string.minLength).to.be.a('function')
       expect(string.maxLength).to.be.a('function')
-      expect(string.isString).to.be.a('function')
+      expect(string.hasString).to.be.a('function')
     })
 
   })

@@ -1,5 +1,15 @@
+import R from 'ramda'
+import {_isString} from './lib/string'
+
 export const string = {
-    isString: (string) => typeof string === 'string',
-    minLength: (value) => (string) => typeof string === 'string'?string.length >= value: false,
-    maxLength: (value) => (string) => typeof string === 'string'?string.length <= value: false
+    hasString: (string) => _isString(string),
+    minLength: (value) => (string) => _isString(string)?string.length >= value: false,
+    maxLength: (value) => (string) => _isString(string)?string.length <= value: false
 }
+
+
+
+
+
+
+
