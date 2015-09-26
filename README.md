@@ -1,5 +1,5 @@
 # validate.js
-A simple library to forms validate.
+A simple library for data validation.
 
 # LICENSE
 MIT®
