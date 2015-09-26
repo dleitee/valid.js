@@ -1,7 +1,7 @@
 {
   "name": "validate.js",
   "version": "1.0.0",
-  "description": "A simple library to forms validate.",
+  "description": "A simple library for data validation",
   "scripts": {
     "test": "mocha --compilers js:babel/register"
   },
