@@ -1,9 +1,1 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _isInteger = function _isInteger(value) {
-  return value << 0 === value;
-};
-exports._isInteger = _isInteger;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _isInteger=function(e){return e<<0===e};exports._isInteger=_isInteger;

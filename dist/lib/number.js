@@ -1,9 +1,1 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-var _isNumber = function _isNumber(value) {
-  return Object.prototype.toString.call(value) === '[object Number]';
-};
-exports._isNumber = _isNumber;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _isNumber=function(e){return"[object Number]"===Object.prototype.toString.call(e)};exports._isNumber=_isNumber;
