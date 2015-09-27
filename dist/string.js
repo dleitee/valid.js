@@ -1,1 +1,24 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _libString=require("./lib/string"),string={hasString:function(n){return _libString._isString(n)},minLength:function(n){return function(t){return _libString._isString(t)?t.length>=n:!1}},maxLength:function(n){return function(t){return _libString._isString(t)?t.length<=n:!1}}};exports.string=string;
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
+
+var _libString = require('./lib/string');
+
+var string = {
+    hasString: function hasString(string) {
+        return (0, _libString._isString)(string);
+    },
+    minLength: function minLength(value) {
+        return function (string) {
+            return (0, _libString._isString)(string) ? string.length >= value : false;
+        };
+    },
+    maxLength: function maxLength(value) {
+        return function (string) {
+            return (0, _libString._isString)(string) ? string.length <= value : false;
+        };
+    }
+};
+exports.string = string;

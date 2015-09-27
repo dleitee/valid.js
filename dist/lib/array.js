@@ -1,1 +1,9 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _isArray=function(r){null!=r&&r.length>=0&&"[object Array]"===Object.prototype.toString.call(r)};exports._isArray=_isArray;
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var _isArray = function _isArray(value) {
+  value != null && value.length >= 0 && Object.prototype.toString.call(value) === '[object Array]';
+};
+exports._isArray = _isArray;

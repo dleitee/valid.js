@@ -1,8 +1,7 @@
 'use strict'
-var validate = require('./dist/validate.js').validate;
-var string = require('./dist/validate.js').string;
+var validate = require('./dist/validate').validate;
+var string = require('./dist/validate').string;
 
-
-var result = validate('22', string.hasString, string.minLength(0), string.maxLength(2));
+var functions = ['22', string.hasString, string.minLength(0), string.maxLength(2)]
+var result = validate.apply(null, functions);
 console.log(result);
-//console.log();
