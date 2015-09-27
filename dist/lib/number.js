@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _isNumber=function(e){return"[object Number]"===Object.prototype.toString.call(e)};exports._isNumber=_isNumber;

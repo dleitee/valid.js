@@ -1,0 +1,1 @@
+"use strict";!function(){module.exports={isString:function(t){return"[object String]"===Object.prototype.toString.call(t)}}}();
