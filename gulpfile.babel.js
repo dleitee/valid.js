@@ -16,22 +16,25 @@ import babelify from 'babelify'
 import source from 'vinyl-source-stream'
 
 
-gulp.task('js', () => {
-  gulp.src('src/**/*.js')
-    .pipe(babel())
-    //.pipe(concat('validate.js'))
+gulp.task('babel', () => {
+   gulp.src('src/**/*.js')
+     .pipe(babel())
+     .pipe(uglify())
+     .pipe(gulp.dest('dist'));
+
+})
+
+gulp.task('browserify', () => {
+    browserify({
+        entries: './src/validate.js',
+        debug: true
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source('validate.min.js'))
+    .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('dist'));
-// browserify({
-//     entries: './src/validate.js',
-//     //extensions: ['.js'],
-//     //insertGlobals : true,
-//     //debug: true
-//   })
-//   .transform(babelify)
-//   .bundle()
-//   .pipe(source('validate.js'))
-//   .pipe(buffer())
-//   //.pipe(uglify())
-//   .pipe(gulp.dest('dist'));
 })
+
+gulp.task('default', ['babel', 'browserify'], () => {})
