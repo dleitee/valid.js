@@ -26,8 +26,8 @@ gulp.task('babel', () => {
 
 gulp.task('browserify', () => {
     browserify({
-        entries: './src/validate.js',
-        debug: true
+        entries: './src/validate.js'
+        //debug: true
     })
     .transform(babelify)
     .bundle()

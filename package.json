@@ -26,7 +26,6 @@
     "gulp-concat": "^2.6.0",
     "gulp-order": "^1.1.1",
     "gulp-uglify": "^1.4.1",
-    "ramda": "^0.17.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
