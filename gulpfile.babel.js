@@ -12,6 +12,7 @@ import buffer from 'vinyl-buffer'
 import browserify from 'browserify'
 import babelify from 'babelify'
 import source from 'vinyl-source-stream'
+import connect from 'gulp-connect'
 
 gulp.task('browserify', () => {
   browserify({
@@ -29,8 +30,16 @@ gulp.task('browserify', () => {
   .pipe(source('validate.js'))
   .pipe(buffer())
   .pipe(uglify())
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('public'));
 })
 
+gulp.task('server', () => {
+  connect.server({
+    root: ['public', 'dist'],
+    port: 8000,
+    livereload: true
+  })
+})
 
 gulp.task('default', ['browserify'], () => {})
