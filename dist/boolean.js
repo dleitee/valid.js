@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var bool={isTrue:function(e){return 1==e},isFalse:function(e){return 0==e}};exports.bool=bool;

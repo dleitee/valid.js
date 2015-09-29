@@ -24,9 +24,6 @@
     "browserify": "^11.2.0",
     "expect.js": "^0.3.1",
     "gulp": "^3.9.0",
-    "gulp-babel": "^5.2.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-order": "^1.1.1",
     "gulp-uglify": "^1.4.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"

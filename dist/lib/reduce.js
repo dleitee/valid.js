@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var reduce=function(e,r,t){var o=t[Symbol.iterator](),u=function(r,t){for(var o=!0;o;){var u=r,n=t;a=v=c=void 0,o=!1;var a=n.next(),v=a.value,c=a.done;if(c)return u;r=e(u,v),t=n,o=!0}};return u(r,o)};exports.reduce=reduce;

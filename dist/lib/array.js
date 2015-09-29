@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _isArray=function(r){null!=r&&r.length>=0&&"[object Array]"===Object.prototype.toString.call(r)};exports._isArray=_isArray;
