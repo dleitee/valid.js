@@ -1,24 +1,9 @@
 import expect from 'expect.js'
-import {validate, string, number} from '../src/validate'
+import {validate, string} from '../src/validate'
 
-describe('Library Validate', () => {
+describe('Functions String', () => {
 
-  describe('#validate()', () => {
-
-    it('should expose a function', () =>  {
-      expect(validate).to.be.a('function')
-      expect(string.minLength).to.be.a('function')
-      expect(string.maxLength).to.be.a('function')
-      expect(string.hasString).to.be.a('function')
-      expect(number.maxNumber).to.be.a('function')
-      expect(number.minNumber).to.be.a('function')
-      expect(number.between).to.be.a('function')
-      expect(number.isNumber).to.be.a('function')
-    })
-
-  })
-
-  describe('string#minLength', () => {
+  describe('#minLength', () => {
 
     it('should be true for all', () => {
         expect(validate(string.minLength(0))('')).to.be.ok()
