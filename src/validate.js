@@ -6,6 +6,7 @@ import {reduce} from './lib/reduce.js'
 export * from './string'
 export * from './util'
 export * from './boolean'
+export * from './number'
 
 
 export const validate =
