@@ -69,6 +69,13 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
 # Validation Functions
 
 - [x] [String](https://github.com/dleitee/validate.js/blob/master/docs/string.md)
+    -  [ ] isString
+    -  [ ] minLength
+    -  [ ] maxLength
+    -  [ ] regex
+-  [ ] [Util](https://github.com/dleitee/validate.js/blob/master/docs/util.md)
+    -  [ ] isRequired
+    -  [ ] isEmail
 
 # LICENSE
 The MIT License (MIT)
