@@ -64,6 +64,8 @@ var result = isvalid('Test ValidateJS')
 // result => true
 ```
 
+Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
+
 # LICENSE
 The MIT License (MIT)
 
