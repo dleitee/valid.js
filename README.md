@@ -15,6 +15,15 @@ bower install validatejs
 
 ## Usage
 
+### With ES6
+
+```javascript
+import {validate, util} from '../src/validate'
+let isvalid = validate(string.maxLength(15))
+let result = isvalid('Test ValidateJS')
+// result => true
+```
+
 ## Example
 
 ```javascript
