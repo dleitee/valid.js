@@ -66,6 +66,10 @@ var result = isvalid('Test ValidateJS')
 
 Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
 
+# Validation Functions
+
+- [x] [String](https://github.com/dleitee/validate.js/blob/master/docs/string.md)
+
 # LICENSE
 The MIT License (MIT)
 
