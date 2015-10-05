@@ -38,23 +38,22 @@ var result = isvalid('Test ValidateJS')
 // result => true
 ```
 
+### With Browser
 
-## Example
+```html
+<script src="validate.min.js"></script>
+```
 
 ```javascript
-var validate = require('./dist/validate.js').validate;
-var string = require('./dist/validate.js').string;
+var validate = window.validate.validate
+var string = window.validate.string
+var util = window.validate.util
 
-var result = validate('12', string.hasString,
-                            string.minLength(0),
-                            string.maxLength(2));
-// result = true
-
-var result2 = validate('123', string.hasString,
-                                string.minLength(0),
-                                string.maxLength(2));
-// result2 = false
+var isvalid = validate(string.maxLength(15), util.required)
+var result = isvalid('Test ValidateJS')
+// result => true
 ```
+
 # LICENSE
 The MIT License (MIT)
 
