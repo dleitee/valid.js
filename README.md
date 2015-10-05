@@ -18,9 +18,9 @@ bower install validatejs
 ### With ES6
 
 ```javascript
-import {validate, string} from '../src/validate'
+import {validate, string, util} from '../src/validate'
 
-let isvalid = validate(string.maxLength(15))
+let isvalid = validate(string.maxLength(15), util.required)
 let result = isvalid('Test ValidateJS')
 // result => true
 ```
