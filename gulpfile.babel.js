@@ -11,13 +11,14 @@ import uglify from 'gulp-uglify'
 import buffer from 'vinyl-buffer'
 import browserify from 'browserify'
 import babelify from 'babelify'
+import es6ify from 'es6ify'
 import source from 'vinyl-source-stream'
 import connect from 'gulp-connect'
 
 gulp.task('browserify', () => {
   browserify({
     entries: './src/validate.js',
-    transform: [babelify],
+    transform: [babelify, es6ify],
     // Generate a UMD bundle for the supplied export name.
     // This bundle works with other module systems and sets the name
     // given as a window global if no module system is found.
