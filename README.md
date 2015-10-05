@@ -41,9 +41,19 @@ var result = isvalid('Test ValidateJS')
 ### With Browser
 
 ```html
-<script src="validate.min.js"></script>
+<script src="validate.js/validate.min.js"></script>
 ```
 
+```javascript
+var validate = validate.validate
+var string = validate.string
+var util = validate.util
+
+var isvalid = validate(string.maxLength(15), util.required)
+var result = isvalid('Test ValidateJS')
+// result => true
+```
+OR 
 ```javascript
 var validate = window.validate.validate
 var string = window.validate.string
