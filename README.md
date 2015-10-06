@@ -69,10 +69,11 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
 # Validation Functions
 
 - [x] [String](https://github.com/dleitee/validate.js/blob/master/docs/string.md)
-    -  [ ] isString
-    -  [ ] minLength
-    -  [ ] maxLength
-    -  [ ] regex
+    -  [x] isString
+    -  [x] minLength(min)
+    -  [x] maxLength(max)
+    -  [x] length(min, max)
+    -  [x] regex(reg)
 -  [ ] [Util](https://github.com/dleitee/validate.js/blob/master/docs/util.md)
     -  [ ] isRequired
     -  [ ] isEmail
