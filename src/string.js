@@ -44,11 +44,27 @@ function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
 }
 
 /*
+ * Validate regular expressions
+ * @doc https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+ * @param expression
+ * @param lastIndex
+ * @return boolean
+ */
+function regex(expression, lastIndex = null){
+  return (string) => {
+    const REGEX = expression
+    REGEX.lastIndex = lastIndex
+    return REGEX.exec(string)
+  }
+}
+
+/*
  * Export constant string
  */
 export const string = {
   isString: isString,
   minLength: minLength,
   maxLength: maxLength,
-  length: length
+  length: length,
+  regex: regex
 }

@@ -154,4 +154,18 @@ describe('Functions String', () => {
 
   })
 
+  describe('#regex(expression, lastIndex)', () => {
+
+    it('should be true', () => {
+      let result = validate(string.regex(/a/, 2))
+      expect(result('a')).to.be.ok()
+    })
+
+    it('should be false', () => {
+      let result = validate(string.regex(/a/, 2))
+      expect(result('b')).to.not.be.ok()
+    })
+
+  })
+
 })
