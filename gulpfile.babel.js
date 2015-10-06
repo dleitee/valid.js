@@ -15,6 +15,8 @@ import es6ify from 'es6ify'
 import deglobalify from 'deglobalify'
 import source from 'vinyl-source-stream'
 import connect from 'gulp-connect'
+import jshint from 'gulp-jshint'
+import stylish from 'jshint-stylish'
 
 gulp.task('browserify', () => {
   browserify({
@@ -23,7 +25,7 @@ gulp.task('browserify', () => {
     // Generate a UMD bundle for the supplied export name.
     // This bundle works with other module systems and sets the name
     // given as a window global if no module system is found.
-    standalone: 'validate',
+    standalone: 'valid.js',
     // Enable source maps that allow you to debug your files
     // separately.
     debug: true
@@ -34,6 +36,12 @@ gulp.task('browserify', () => {
   .pipe(uglify())
   .pipe(gulp.dest('dist'))
   .pipe(gulp.dest('public'));
+})
+
+gulp.task('lint', () => {
+  gulp.src('./src/string.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter(stylish));
 })
 
 gulp.task('server', () => {

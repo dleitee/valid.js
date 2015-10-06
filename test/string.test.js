@@ -37,12 +37,12 @@ describe('Functions String', () => {
 
     it('It should be an exception when undefined', () => {
       let result = validate(string.minLength(null))
-      expect(result.bind(this, 'Test')).to.throwError()
+      expect(result('Test')).to.be.ok()
     })
 
     it('It should be an exception when undefined', () => {
       let result = validate(string.minLength(undefined))
-      expect(result.bind(this, 'Test')).to.throwError()
+      expect(result('Test')).to.be.ok()
     })
 
   })
@@ -86,12 +86,12 @@ describe('Functions String', () => {
 
     it('It should be an exception when undefined', () => {
       let result = validate(string.maxLength(null))
-      expect(result.bind(this, 'Test')).to.throwError()
+      expect(result('Test')).to.be.ok()
     })
 
     it('It should be an exception when undefined', () => {
       let result = validate(string.maxLength(undefined))
-      expect(result.bind(this, 'Test')).to.throwError()
+      expect(result('Test')).to.be.ok()
     })
 
   })
@@ -126,6 +126,30 @@ describe('Functions String', () => {
     it('should be false when value is undefined', () => {
       let result = validate(string.isString)
       expect(result(undefined)).to.not.be.ok()
+    })
+
+  })
+
+  describe('#length(min, max)', () => {
+
+    it('should be true when string.length between min and max', () => {
+      let result = validate(string.length(1, 10))
+      expect(result('T')).to.be.ok()
+    })
+
+    it('should be true when string.length between min and max', () => {
+      let result = validate(string.length(1, 10))
+      expect(result('1234567890')).to.be.ok()
+    })
+
+    it('should be false when string.length out of range min and max', () => {
+      let result = validate(string.length(1, 10))
+      expect(result('')).to.not.be.ok()
+    })
+
+    it('should be false when string.length out of range min and max', () => {
+      let result = validate(string.length(1, 10))
+      expect(result('12345678901')).to.not.be.ok()
     })
 
   })
