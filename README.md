@@ -8,7 +8,7 @@ ValidateJS is available on npm:
 npm install validatejs --save
 ```
 
-or bower: 
+or bower:
 ```
 bower install validatejs
 ```
@@ -53,7 +53,7 @@ var isvalid = validate(string.maxLength(15), util.required)
 var result = isvalid('Test ValidateJS')
 // result => true
 ```
-OR 
+OR
 ```javascript
 var validate = window.validate.validate
 var string = window.validate.string
@@ -68,13 +68,13 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
 
 # Validation Functions
 
-- [x] [String](https://github.com/dleitee/validate.js/blob/master/docs/string.md)
+- [x] [String](https://github.com/dleitee/valid.js/blob/master/docs/string.md)
     -  [x] isString
     -  [x] minLength(min)
     -  [x] maxLength(max)
     -  [x] length(min, max)
-    -  [x] regex(reg)
--  [ ] [Util](https://github.com/dleitee/validate.js/blob/master/docs/util.md)
+    -  [ ] regex(reg)
+-  [ ] [Util](https://github.com/dleitee/valid.js/blob/master/docs/util.md)
     -  [ ] isRequired
     -  [ ] isEmail
 
