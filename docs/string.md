@@ -26,11 +26,11 @@ Validates the size of the 'string' is less than or equal to (<=) the value
 ```es6
 import {validate, string} from 'validate'
 
-let isvalid = validate(string.minLength(15)
+let isvalid = validate(string.minLength(15))
 let result = isvalid('Test ValidateJS')
 // result => true
 let resultFalse = isvalid('TestValidateJS')
-// resultFalse => true
+// resultFalse => false
 ```
 
 ## maxLength(value)
@@ -41,9 +41,43 @@ Validates the size of the 'string' is greater than or equal to (> =) the value
 ```es6
 import {validate, string} from 'validate'
 
-let isvalid = validate(string.maxLength(15)
+let isvalid = validate(string.maxLength(15))
 let result = isvalid('Test ValidateJS')
 // result => true
 let resultFalse = isvalid('Test ValidateJS Brazil')
-// resultFalse => true
+// resultFalse => false
 ```
+
+## lenght(minValue, maxValue)
+
+Validates that the length of the string is within the range
+
+#### Usage
+
+```es6
+import {validate, string} from 'validate'
+
+let isvalid = validate(string.length(10, 15))
+let result = isvalid('Test ValidateJS')
+// result => true
+let resultFalse = isvalid('Test ValidateJS Brazil')
+// resultFalse => false
+```
+
+## regex(expression, lastIndex)
+
+Validate [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+
+#### Usage
+
+```es6
+import {validate, string} from 'validate'
+
+let isvalid = validate(string.regex(\a\))
+let result = isvalid('Test ValidateJS')
+// result => true
+let resultFalse = isvalid('Test VlidteJS Brazil')
+// resultFalse => false
+```
+
+.
