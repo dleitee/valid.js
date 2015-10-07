@@ -73,10 +73,10 @@ Validate [regular expressions](https://developer.mozilla.org/en-US/docs/Web/Java
 ```es6
 import {validate, string} from 'validate'
 
-let isvalid = validate(string.regex(\a\))
+let isvalid = validate(string.regex(/a/))
 let result = isvalid('Test ValidateJS')
 // result => true
-let resultFalse = isvalid('Test VlidteJS Brazil')
+let resultFalse = isvalid('Test VlidteJS Brzil')
 // resultFalse => false
 ```
 
