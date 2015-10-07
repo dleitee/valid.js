@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-  - 4.1
-before_script:
-  - npm install -g gulp
-script: gulp
-after_script:
-  - npm test
