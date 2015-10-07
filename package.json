@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "A simple library for data validation",
   "scripts": {
-    "test": "mocha --compilers js:babel/register"
+    "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   ],
   "author": "Daniel Leite de Oliveira <dleitee@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
+    "mocha": "^2.3.3",
     "babel": "^5.8.23",
     "babel-core": "^5.8.25",
     "babelify": "^6.3.0",
