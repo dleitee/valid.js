@@ -1,17 +1,9 @@
 # validate.js
 A simple library for data validation.
 
-## Install
+## <del>Install</del>
 
-ValidateJS is available on npm:
-```
-npm install validatejs --save
-```
 
-or bower:
-```
-bower install validatejs
-```
 
 ## Usage
 
