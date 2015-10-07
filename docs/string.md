@@ -18,9 +18,9 @@ let result = isvalid('Test ValidateJS')
 // result => true
 ```
 
-## minLength(value)
+## minLength(value = Number.MIN_VALUE)
 
-Validates the size of the 'string' is less than or equal to (<=) the value
+Validates the size of the 'string' is greater than or equal to (>=) the value
 
 #### Usage
 ```es6
@@ -33,9 +33,9 @@ let resultFalse = isvalid('TestValidateJS')
 // resultFalse => false
 ```
 
-## maxLength(value)
+## maxLength(value = Number.MAX_VALUE)
 
-Validates the size of the 'string' is greater than or equal to (> =) the value
+Validates the size of the 'string' is less than or equal to (<=) the value
 
 #### Usage
 ```es6
@@ -48,7 +48,7 @@ let resultFalse = isvalid('Test ValidateJS Brazil')
 // resultFalse => false
 ```
 
-## lenght(minValue, maxValue)
+## lenght(minValue = Number.MIN_VALUE, maxValue = Number.MAX_VALUE)
 
 Validates that the length of the string is within the range
 
