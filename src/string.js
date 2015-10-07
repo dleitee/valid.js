@@ -54,7 +54,7 @@ function regex(expression, lastIndex = null){
   return (string) => {
     const REGEX = expression
     REGEX.lastIndex = lastIndex
-    return REGEX.exec(string)
+    return REGEX.test(string)
   }
 }
 
