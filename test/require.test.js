@@ -9,7 +9,7 @@ describe('Usage with require', () => {
   describe('#require', () => {
 
     it('should be true when value is true', () => {
-      let result = validate(util.required)
+      let result = validate(util.isRequired)
       expect(result(true)).to.be.ok()
     })
 

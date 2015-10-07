@@ -11,7 +11,7 @@ import {string} from './string.js'
  * @params value
  * @return boolean
  */
-function required(value) {
+function isRequired(value) {
   if(isNil(value))
     return false
   else
@@ -46,7 +46,7 @@ function isEmail(email) {
  * Export constant util
  */
 export const util = {
-    required: required,
+    isRequired: isRequired,
     isEmail: isEmail
 }
 

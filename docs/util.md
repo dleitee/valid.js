@@ -4,7 +4,7 @@
 import {util} from 'validate'
 ```
 
-## required
+## isRequired
 
 Checks for data
 

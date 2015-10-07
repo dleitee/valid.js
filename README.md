@@ -81,9 +81,9 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
     - [x] minNumber
     - [x] maxNumber
     - [x] between
--  [ ] [Util](https://github.com/dleitee/valid.js/blob/master/docs/util.md)
-    - [ ] isRequired
-    - [ ] isEmail
+-  [x] [Util](https://github.com/dleitee/valid.js/blob/master/docs/util.md)
+    - [x] isRequired
+    - [x] isEmail
 
 # LICENSE
 The MIT License (MIT)
