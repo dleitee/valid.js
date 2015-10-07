@@ -20,7 +20,7 @@ let resultFalse = isvalid('A')
 ```
 
 
-## maxNumber(maxValue = Number.MAX_VALUE)
+## maxNumber(maxValue)
 
 Validates the size of the 'number' is less than or equal to (<=) the value
 
@@ -35,7 +35,7 @@ let resultFalse = isvalid(16)
 // resultFalse => false
 ```
 
-## minNumber(minValue = Number.MIN_VALUE)
+## minNumber(minValue)
 
 Validates the size of the 'number' is greater than or equal to (>=) the value
 
@@ -51,7 +51,7 @@ let resultFalse = isvalid(14)
 // resultFalse => false
 ```
 
-## between(minValue = Number.MIN_VALUE, maxValue = Number.MAX_VALUE)
+## between(minValue, maxValue)
 
 Validates if number is within the range
 
