@@ -6,7 +6,7 @@ import {_isNumber} from './lib/number'
  * @return boolean
  */
 function isNumber(number) {
-    return _isNumber(value)
+    return _isNumber(number)
 }
 
 /*

@@ -77,5 +77,34 @@ describe('Functions Util', () => {
 
   })
 
+  describe('#isEmail(value)', () => {
+
+    it('should be true when value is .com', () => {
+      let result = validate(util.isEmail)
+      expect(result('email@provedor.com')).to.be.ok()
+    })
+
+    it('should be true when value is .com.br', () => {
+      let result = validate(util.isEmail)
+      expect(result('email@provedor.com.br')).to.be.ok()
+    })
+
+    it('should be true when value is .org.br', () => {
+      let result = validate(util.isEmail)
+      expect(result('email@provedor.org.br')).to.be.ok()
+    })
+
+    it('should be false when value is @provedor', () => {
+      let result = validate(util.isEmail)
+      expect(result('email@provedor')).to.not.be.ok()
+    })
+
+    it('should be false when value is provedor', () => {
+      let result = validate(util.isEmail)
+      expect(result('emailprovedor')).to.not.be.ok()
+    })
+
+  })
+
 
 })
