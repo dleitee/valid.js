@@ -1,9 +1,19 @@
 # validate.js
 A simple library for data validation.
 
-## <del>Install</del>
+## Install
 
+**Unavailable temporarily**
 
+ValidateJS is available on npm:
+```
+npm install validatejs --save
+```
+
+or bower:
+```
+bower install validatejs
+```
 
 ## Usage
 
@@ -61,14 +71,19 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
 # Validation Functions
 
 - [x] [String](https://github.com/dleitee/valid.js/blob/master/docs/string.md)
-    -  [x] isString
-    -  [x] minLength(min)
-    -  [x] maxLength(max)
-    -  [x] length(min, max)
-    -  [ ] regex(reg)
+    - [x] isString
+    - [x] minLength(min)
+    - [x] maxLength(max)
+    - [x] length(min, max)
+    - [x] regex(reg)
+- [x] [Number](https://github.com/dleitee/valid.js/blob/master/docs/number.md)
+    - [x] isNumber
+    - [x] minNumber
+    - [x] maxNumber
+    - [x] between
 -  [ ] [Util](https://github.com/dleitee/valid.js/blob/master/docs/util.md)
-    -  [ ] isRequired
-    -  [ ] isEmail
+    - [ ] isRequired
+    - [ ] isEmail
 
 # LICENSE
 The MIT License (MIT)

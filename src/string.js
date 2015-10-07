@@ -11,17 +11,17 @@ function isString(string) {
 }
 
 /*
- * Validates the size of the 'string' is less than or equal to (<=) the min
+ * Validates the size of the 'string' is greater than or equal to (> =) the max
  * @param minLength
  * @param string - value for check
  * @return boolean
  */
 function minLength(min = Number.MIN_VALUE) {
-  return (string) => _isString(string) & string.length >= min
+  return (string) => _isString(string) && string.length >= min
 }
 
 /*
- * Validates the size of the 'string' is greater than or equal to (> =) the max
+ * Validates the size of the 'string' is less than or equal to (<=) the min
  * @param maxLength
  * @param string - value for check
  * @return boolean
@@ -30,7 +30,7 @@ function maxLength(max = Number.MAX_VALUE) {
   if(isNil(max)) {
     max = Number.MAX_VALUE
   }
-  return (string) => _isString(string) & string.length <= max
+  return (string) => _isString(string) && string.length <= max
 }
 
 /*
@@ -40,7 +40,7 @@ function maxLength(max = Number.MAX_VALUE) {
  * @return boolean
  */
 function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
-  return (string) => this.minLength(min)(string) & this.maxLength(max)(string)
+  return (string) => this.minLength(min)(string) && this.maxLength(max)(string)
 }
 
 /*

@@ -25,9 +25,9 @@ describe('Functions Number', () => {
       expect(result(11)).to.not.be.ok()
     })
 
-    it('should be false when value is undefined', () => {
+    it('should be true when value is undefined', () => {
       let result = validate(number.maxNumber(undefined))
-      expect(result(11)).to.not.be.ok()
+      expect(result(11)).to.be.ok()
     })
 
     it('should be false when number is null', () => {
@@ -42,7 +42,7 @@ describe('Functions Number', () => {
 
   })
 
-  describe('#maxNumber(value)', () => {
+  describe('#minNumber(value)', () => {
 
     it('should be true when number > value', () => {
       let result = validate(number.minNumber(10))
@@ -64,9 +64,9 @@ describe('Functions Number', () => {
       expect(result(11)).to.be.ok()
     })
 
-    it('should be false when value is undefined', () => {
+    it('should be true when value is undefined', () => {
       let result = validate(number.minNumber(undefined))
-      expect(result(11)).to.not.be.ok()
+      expect(result(11)).to.be.ok()
     })
 
     it('should be false when number is null', () => {
@@ -83,31 +83,26 @@ describe('Functions Number', () => {
 
   describe('#between(min, max)', () => {
 
-    var min = 10,
+    let min = 10,
         max = 20
-
+    let result = validate(number.between(min,max))
     it('should be true when number >= min and number <= max', () => {
-      let result = validate(number.between(min,max))
       expect(result(11)).to.be.ok()
     })
 
     it('should be true when number = min', () => {
-      let result = validate(number.between(min, max))
       expect(result(min)).to.be.ok()
     })
 
     it('should be true when number = max', () => {
-      let result = validate(number.between(min, max))
       expect(result(max)).to.be.ok()
     })
 
     it('should be false when number < min', () => {
-      let result = validate(number.between(min,max))
       expect(result(min-1)).to.not.be.ok()
     })
 
     it('should be false when number > max', () => {
-      let result = validate(number.between(min,max))
       expect(result(max+1)).to.not.be.ok()
     })
 
