@@ -37,6 +37,10 @@ function between(minValue = Number.MIN_VALUE, maxValue = Number.MAX_VALUE){
     return (value) => this.minNumber(minValue)(value) &&
                         this.maxNumber(maxValue)(value)
 }
+
+/*
+ * Export constant number
+ */
 export const number = {
     maxNumber: maxNumber,
     minNumber: minNumber,

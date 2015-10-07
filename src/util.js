@@ -6,6 +6,11 @@ import {_isObject} from './lib/object.js'
 import {_isString} from './lib/string.js'
 import {string} from './string.js'
 
+/*
+ * Checks for data
+ * @params value
+ * @return boolean
+ */
 function required(value) {
   if(isNil(value))
     return false
@@ -28,11 +33,18 @@ function required(value) {
     return !!value
 }
 
+/*
+ * Checks for email
+ * @params email
+ * @return boolean
+ */
 function isEmail(email) {
   return string.regex(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)(email)
 }
 
-
+/*
+ * Export constant util
+ */
 export const util = {
     required: required,
     isEmail: isEmail
