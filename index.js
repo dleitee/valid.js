@@ -1,11 +1,9 @@
 
-//var reduce = require('./dist/lib/reduce.js').reduce;
-var validate = require('./dist/validate').validate;
-var string = require('./dist/validate').string;
+var validatejs = require('./dist/validate')
+var validate = validatejs.validate,
+    string = validatejs.string,
+    util = validatejs.util
 
-
-
-var functions = ['22', string.hasString, string.minLength(0), string.maxLength(2)]
-var result = validate.apply(null, functions);
-console.log(result);
-
+var isvalid = validate(string.maxLength(15), util.isRequired)
+var result = isvalid('Test ValidateJS')
+console.log(result)
