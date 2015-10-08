@@ -106,5 +106,29 @@ describe('Functions Util', () => {
 
   })
 
+  describe('#isCep(value)', () => {
+
+    it('should be true when value is 99999-999', () => {
+      let result = validate(util.isCep)
+      expect(result('99999-999')).to.be.ok()
+    })
+
+    it('should be false when value is 99999999', () => {
+      let result = validate(util.isCep)
+      expect(result('99999999')).to.not.be.ok()
+    })
+
+    it('should be false when value is 99999/999', () => {
+      let result = validate(util.isCep)
+      expect(result('99999/999')).to.not.be.ok()
+    })
+
+    it('should be false when value is 9999-999', () => {
+      let result = validate(util.isCep)
+      expect(result('9999-999')).to.not.be.ok()
+    })
+
+  })
+
 
 })

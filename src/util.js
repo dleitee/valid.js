@@ -43,10 +43,20 @@ function isEmail(email) {
 }
 
 /*
+ * Checks for cep
+ * @params cep
+ * @return boolean
+ */
+function isCep(cep) {
+  return string.regex(/^[0-9]{5}-[0-9]{3}$/)(cep)
+}
+
+/*
  * Export constant util
  */
 export const util = {
     isRequired: isRequired,
-    isEmail: isEmail
+    isEmail: isEmail,
+    isCep: isCep
 }
 
