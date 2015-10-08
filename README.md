@@ -21,7 +21,7 @@ bower install valid.js
 ```javascript
 import {validate, string, util} from 'valid.js'
 
-let isvalid = validate(string.maxLength(15), util.required)
+let isvalid = validate(string.maxLength(15), util.isRequired)
 let result = isvalid('Test ValidateJS')
 // result => true
 ```
@@ -34,7 +34,7 @@ var validate = validatejs.validate,
     string = validatejs.string,
     util = validatejs.util
 
-var isvalid = validate(string.maxLength(15), util.required)
+var isvalid = validate(string.maxLength(15), util.isRequired)
 var result = isvalid('Test ValidateJS')
 // result => true
 ```
@@ -50,7 +50,7 @@ var validate = validate.validate
 var string = validate.string
 var util = validate.util
 
-var isvalid = validate(string.maxLength(15), util.required)
+var isvalid = validate(string.maxLength(15), util.isRequired)
 var result = isvalid('Test ValidateJS')
 // result => true
 ```
@@ -60,7 +60,7 @@ var validate = window.validate.validate
 var string = window.validate.string
 var util = window.validate.util
 
-var isvalid = validate(string.maxLength(15), util.required)
+var isvalid = validate(string.maxLength(15), util.isRequired)
 var result = isvalid('Test ValidateJS')
 // result => true
 ```
