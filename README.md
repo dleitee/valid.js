@@ -4,16 +4,14 @@ A simple library for data validation.
 
 ## Install
 
-**Unavailable temporarily**
-
 ValidateJS is available on npm:
 ```
-npm install validatejs --save
+npm install valid.js --save
 ```
 
 or bower:
 ```
-bower install validatejs
+bower install valid.js
 ```
 
 ## Usage
@@ -21,7 +19,7 @@ bower install validatejs
 ### With ES6/import
 
 ```javascript
-import {validate, string, util} from 'validate'
+import {validate, string, util} from 'valid.js'
 
 let isvalid = validate(string.maxLength(15), util.required)
 let result = isvalid('Test ValidateJS')
@@ -31,7 +29,7 @@ let result = isvalid('Test ValidateJS')
 ### With require
 
 ```javascript
-var validatejs = require('validate')
+var validatejs = require('valid.js')
 var validate = validatejs.validate,
     string = validatejs.string,
     util = validatejs.util
@@ -44,7 +42,7 @@ var result = isvalid('Test ValidateJS')
 ### With Browser
 
 ```html
-<script src="validate.js/validate.min.js"></script>
+<script src="valid.js/validate.js"></script>
 ```
 
 ```javascript

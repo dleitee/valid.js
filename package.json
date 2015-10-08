@@ -1,6 +1,6 @@
 {
   "name": "valid.js",
-  "version": "0.1.4",
+  "version": "1.1.1",
   "description": "A simple library for data validation",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register"
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/dleitee/valid.js.git"
   },
-  "main": "src/validate.js",
+  "main": "dist/validate.js",
   "keywords": [
     "javascript",
     "es6",
@@ -22,7 +22,7 @@
     "url": "github.com/dleitee"
   },
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "mocha": "^2.3.3",
     "babel": "^5.8.23",
     "babel-core": "^5.8.25",
