@@ -1,0 +1,29 @@
+{
+  "name": "valid.js",
+  "main": "./dist/validate.js",
+  "version": "1.1.1",
+  "authors": [
+    "Daniel Leite de Oliveira <dleitee@gmail.com>"
+  ],
+  "description": "A simple library for data validation",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "validate",
+    "valid.js",
+    "data"
+  ],
+  "license": "MIT",
+  "homepage": "github.com/dleitee",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
