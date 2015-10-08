@@ -93,6 +93,7 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
 - [x] [Util](https://github.com/dleitee/valid.js/blob/master/docs/util.md)
     - [x] isRequired
     - [x] isEmail
+    - [x] isCep
 
 # LICENSE
 The MIT License (MIT)

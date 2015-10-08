@@ -34,5 +34,20 @@ let resultFalse = isvalid('emailgmail.com')
 // resultFalse => false
 ```
 
+## isCep
+
+Checks for cep
+
+#### Usage
+```es6
+import {validate, util} from 'validate'
+
+let isvalid = validate(util.isCep)
+let result = isvalid('88075-290')
+// result => true
+let resultFalse = isvalid('88075290')
+// resultFalse => false
+```
+
 
 .
