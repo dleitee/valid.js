@@ -1,7 +1,7 @@
 # Util
 
 ```es6
-import {util} from 'validate'
+import {util} from 'valid.js'
 ```
 
 ## isRequired
@@ -10,7 +10,7 @@ Checks for data
 
 #### Usage
 ```es6
-import {validate, util} from 'validate'
+import {validate, util} from 'valid.js'
 
 let isvalid = validate(util.required)
 let result = isvalid(15)
@@ -25,7 +25,7 @@ Checks for email
 
 #### Usage
 ```es6
-import {validate, util} from 'validate'
+import {validate, util} from 'valid.js'
 
 let isvalid = validate(util.isEmail)
 let result = isvalid('email@gmail.com')
@@ -40,7 +40,7 @@ Checks for cep
 
 #### Usage
 ```es6
-import {validate, util} from 'validate'
+import {validate, util} from 'valid.js'
 
 let isvalid = validate(util.isCep)
 let result = isvalid('88075-290')
