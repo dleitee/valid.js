@@ -1,7 +1,7 @@
 # Boolean
 
 ```es6
-import {bool} from 'validate'
+import {bool} from 'valid.js'
 ```
 
 ## isTrue
@@ -10,7 +10,7 @@ Checks for true
 
 #### Usage
 ```es6
-import {validate, bool} from 'validate'
+import {validate, bool} from 'valid.js'
 
 let isvalid = validate(number.isTrue)
 let result = isvalid(true)
@@ -25,7 +25,7 @@ Checks for false
 
 #### Usage
 ```es6
-import {validate, bool} from 'validate'
+import {validate, bool} from 'valid.js'
 
 let isvalid = validate(number.isFalse)
 let result = isvalid(false)
@@ -33,3 +33,5 @@ let result = isvalid(false)
 let resultFalse = isvalid(true)
 // resultFalse => false
 ```
+
+.
