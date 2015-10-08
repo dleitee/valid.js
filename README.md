@@ -83,10 +83,10 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
     - [x] maxNumber
     - [x] between
 - [x] [Date](https://github.com/dleitee/valid.js/blob/master/docs/date.md)
-    - [ ] isDate
-    - [ ] minDate(min)
-    - [ ] maxDate(max)
-    - [ ] between(min, max)
+    - [x] isDate
+    - [x] minDate(min)
+    - [x] maxDate(max)
+    - [x] between(min, max)
 - [x] [Bool](https://github.com/dleitee/valid.js/blob/master/docs/bool.md)
     - [x] isTrue
     - [x] isFalse
