@@ -42,7 +42,7 @@ var result = isvalid('Test ValidateJS')
 ### With Browser
 
 ```html
-<script src="valid.js/validate.js"></script>
+<script src="./bower_components/valid.js/dist/validate.js"></script>
 ```
 
 ```javascript
