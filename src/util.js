@@ -14,23 +14,23 @@ import {string} from './string.js'
 function isRequired(value) {
   if(isNil(value))
     return false
-  else
+
   if(_isArray(value))
     return value.length > 0
-  else
+
   if(_isInteger(value))
     return !!value
-  else
+
   if(_isNumber(value))
     return value > 0
-  else
+
   if(_isObject(value))
     return Object.keys(value).length > 0
-  else
+
   if(_isString(value))
     return value.length > 0
-  else
-    return !!value
+
+  return !!value
 }
 
 /*
