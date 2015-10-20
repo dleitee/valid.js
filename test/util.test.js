@@ -94,15 +94,71 @@ describe('Functions Util', () => {
       expect(result('email@provedor.org.br')).to.be.ok()
     })
 
-    it('should be false when value is @provedor', () => {
-      let result = validate(util.isEmail)
-      expect(result('email@provedor')).to.not.be.ok()
-    })
-
     it('should be false when value is provedor', () => {
       let result = validate(util.isEmail)
       expect(result('emailprovedor')).to.not.be.ok()
     })
+
+    it('should be true when email is valid', () => {
+      let result = validate(util.isEmail)
+      expect(result('prettyandsimple@example.com')).to.be.ok()
+    })
+
+    it('should be true when email is valid', () => {
+      let result = validate(util.isEmail)
+      expect(result('very.common@example.com')).to.be.ok()
+    })
+
+    it('should be true when email is valid', () => {
+      let result = validate(util.isEmail)
+      expect(result('disposable.style.email.with+symbol@example.com')).to.be.ok()
+    })
+
+    it('should be true when email is valid', () => {
+      let result = validate(util.isEmail)
+      expect(result('other.email-with-dash@example.com')).to.be.ok()
+    })
+
+    it('should be true when email is valid ["much.more unusual"@example.com]', () => {
+      let result = validate(util.isEmail)
+      expect(result('"much.more unusual"@example.com')).to.be.ok()
+    })
+
+    it('should be true when email is valid ["very.unusual.@.unusual.com"@example.com]', () => {
+      let result = validate(util.isEmail)
+      expect(result('"very.unusual.@.unusual.com"@example.com')).to.be.ok()
+    })
+
+    it('should be true when email is valid [admin@mailserver1]', () => {
+      let result = validate(util.isEmail)
+      expect(result('admin@mailserver1')).to.be.ok()
+    })
+
+    it('should be true when email is valid [#!$%&*+-/=?^_`{}|~@example.org]', () => {
+      let result = validate(util.isEmail)
+      expect(result("#!$%&'*+-/=?^_`{}|~@example.org")).to.be.ok()
+    })
+
+    it('should be true when email is valid ["()<>[]:,;@\\\"!#$%&\'*+-/=?^_`{}| ~.a"@example.org]', () => {
+      let result = validate(util.isEmail)
+      expect(result('"()<>[]:,;@\\\"!#$%&\'*+-/=?^_`{}| ~.a"@example.org')).to.be.ok()
+    })
+
+    it('should be true when email is valid [" "@example.org]', () => {
+      let result = validate(util.isEmail)
+      expect(result('" "@example.org')).to.be.ok()
+    })
+
+    it('should be true when email is valid [üñîçøðé@example.com]', () => {
+      let result = validate(util.isEmail)
+      //expect(result('üñîçøðé@example.com')).to.be.ok()
+    })
+
+    it('should be true when email is valid [üñîçøðé@üñîçøðé.com]', () => {
+      let result = validate(util.isEmail)
+      //expect(result('üñîçøðé@üñîçøðé.com')).to.be.ok()
+    })
+
 
   })
 

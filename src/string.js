@@ -50,11 +50,10 @@ function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
  * @param lastIndex
  * @return boolean
  */
-function regex(expression, lastIndex = null){
+function regex(expression){
   return (string) => {
-    const REGEX = expression
-    REGEX.lastIndex = lastIndex
-    return REGEX.test(string)
+    var reg = new RegExp(expression)
+    return reg.test(string)
   }
 }
 
