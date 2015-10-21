@@ -1,1 +1,1 @@
-export const isNil = value => value === null
+export const isNil = value => value === null || value === undefined

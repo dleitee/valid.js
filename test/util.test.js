@@ -2,9 +2,7 @@ import expect from 'expect.js'
 import {validate, util} from '../src/validate'
 
 describe('Functions Util', () => {
-
   describe('#isRequired(value)', () => {
-
     it('should be true when value is true', () => {
       let result = validate(util.isRequired)
       expect(result(true)).to.be.ok()
@@ -74,11 +72,9 @@ describe('Functions Util', () => {
       let result = validate(util.isRequired)
       expect(result(undefined)).to.not.be.ok()
     })
-
   })
 
   describe('#isEmail(value)', () => {
-
     it('should be true when value is .com', () => {
       let result = validate(util.isEmail)
       expect(result('email@provedor.com')).to.be.ok()
@@ -136,7 +132,7 @@ describe('Functions Util', () => {
 
     it('should be true when email is valid [#!$%&*+-/=?^_`{}|~@example.org]', () => {
       let result = validate(util.isEmail)
-      expect(result("#!$%&'*+-/=?^_`{}|~@example.org")).to.be.ok()
+      expect(result('#!$%&*+\'-/=?^_`{}|~@example.org')).to.be.ok()
     })
 
     it('should be true when email is valid ["()<>[]:,;@\\\"!#$%&\'*+-/=?^_`{}| ~.a"@example.org]', () => {
@@ -148,22 +144,9 @@ describe('Functions Util', () => {
       let result = validate(util.isEmail)
       expect(result('" "@example.org')).to.be.ok()
     })
-
-    it('should be true when email is valid [üñîçøðé@example.com]', () => {
-      let result = validate(util.isEmail)
-      //expect(result('üñîçøðé@example.com')).to.be.ok()
-    })
-
-    it('should be true when email is valid [üñîçøðé@üñîçøðé.com]', () => {
-      let result = validate(util.isEmail)
-      //expect(result('üñîçøðé@üñîçøðé.com')).to.be.ok()
-    })
-
-
   })
 
   describe('#isCep(value)', () => {
-
     it('should be true when value is 99999-999', () => {
       let result = validate(util.isCep)
       expect(result('99999-999')).to.be.ok()
@@ -183,8 +166,5 @@ describe('Functions Util', () => {
       let result = validate(util.isCep)
       expect(result('9999-999')).to.not.be.ok()
     })
-
   })
-
-
 })

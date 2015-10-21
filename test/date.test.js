@@ -2,9 +2,7 @@ import expect from 'expect.js'
 import {validate, date} from '../src/validate'
 
 describe('Functions Date', () => {
-
   describe('#maxDate(value)', () => {
-
     it('should be true when date < value', () => {
       let result = validate(date.maxDate(new Date(2015, 9, 15)))
       expect(result(new Date(2015, 9, 14))).to.be.ok()
@@ -39,11 +37,9 @@ describe('Functions Date', () => {
       let result = validate(date.maxDate(new Date(2015, 9, 15)))
       expect(result(undefined)).to.not.be.ok()
     })
-
   })
 
   describe('#minDate(value)', () => {
-
     it('should be true when date > value', () => {
       let result = validate(date.minDate(new Date(2015, 9, 15)))
       expect(result(new Date(2015, 9, 16))).to.be.ok()
@@ -78,14 +74,12 @@ describe('Functions Date', () => {
       let result = validate(date.minDate(new Date(2015, 9, 15)))
       expect(result(undefined)).to.not.be.ok()
     })
-
   })
 
   describe('#between(min, max)', () => {
-
-    let min = new Date(2015, 9, 15),
-        max = new Date(2015, 9, 20)
-    let result = validate(date.between(min,max))
+    let min = new Date(2015, 9, 15)
+    let max = new Date(2015, 9, 20)
+    let result = validate(date.between(min, max))
     it('should be true when date >= min and date <= max', () => {
       expect(result(new Date(2015, 9, 15))).to.be.ok()
     })
@@ -105,11 +99,9 @@ describe('Functions Date', () => {
     it('should be false when date > max', () => {
       expect(result(new Date(2015, 9, 21))).to.not.be.ok()
     })
-
   })
 
   describe('#isDate(value)', () => {
-
     it('should be true when value is date', () => {
       let result = validate(date.isDate)
       expect(result(new Date(2015, 9, 15))).to.be.ok()
@@ -135,13 +127,9 @@ describe('Functions Date', () => {
       expect(result(null)).to.not.be.ok()
     })
 
-
     it('should be false when value is undefined', () => {
       let result = validate(date.isDate)
       expect(result(undefined)).to.not.be.ok()
     })
-
   })
-
-
 })

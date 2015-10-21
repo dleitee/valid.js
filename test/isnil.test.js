@@ -3,9 +3,7 @@ import {isNil} from '../src/lib/isnil.js'
 import expect from 'expect.js'
 
 describe('Library isNil', () => {
-
   describe('#isNil(value)', () => {
-
     it('should be true when value is null', () => {
       let result = isNil(null)
       expect(result).to.be.ok()
@@ -52,11 +50,8 @@ describe('Library isNil', () => {
     })
 
     it('should be false when value is function', () => {
-      let result = isNil(()=>null)
+      let result = isNil(() => null)
       expect(result).to.not.be.ok()
     })
-
   })
-
-
 })

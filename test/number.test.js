@@ -2,9 +2,7 @@ import expect from 'expect.js'
 import {validate, number} from '../src/validate'
 
 describe('Functions Number', () => {
-
   describe('#maxNumber(value)', () => {
-
     it('should be true when number < value', () => {
       let result = validate(number.maxNumber(10))
       expect(result(9)).to.be.ok()
@@ -39,11 +37,9 @@ describe('Functions Number', () => {
       let result = validate(number.maxNumber(10))
       expect(result(undefined)).to.not.be.ok()
     })
-
   })
 
   describe('#minNumber(value)', () => {
-
     it('should be true when number > value', () => {
       let result = validate(number.minNumber(10))
       expect(result(11)).to.be.ok()
@@ -78,14 +74,12 @@ describe('Functions Number', () => {
       let result = validate(number.minNumber(10))
       expect(result(undefined)).to.not.be.ok()
     })
-
   })
 
   describe('#between(min, max)', () => {
-
-    let min = 10,
-        max = 20
-    let result = validate(number.between(min,max))
+    let min = 10
+    let max = 20
+    let result = validate(number.between(min, max))
     it('should be true when number >= min and number <= max', () => {
       expect(result(11)).to.be.ok()
     })
@@ -99,17 +93,15 @@ describe('Functions Number', () => {
     })
 
     it('should be false when number < min', () => {
-      expect(result(min-1)).to.not.be.ok()
+      expect(result(min - 1)).to.not.be.ok()
     })
 
     it('should be false when number > max', () => {
-      expect(result(max+1)).to.not.be.ok()
+      expect(result(max + 1)).to.not.be.ok()
     })
-
   })
 
   describe('#isNumber(value)', () => {
-
     it('should be true when value is number', () => {
       let result = validate(number.isNumber)
       expect(result(1)).to.be.ok()
@@ -135,13 +127,9 @@ describe('Functions Number', () => {
       expect(result(null)).to.not.be.ok()
     })
 
-
     it('should be false when value is undefined', () => {
       let result = validate(number.isNumber)
       expect(result(undefined)).to.not.be.ok()
     })
-
   })
-
-
 })
