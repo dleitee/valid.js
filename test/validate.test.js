@@ -1,12 +1,8 @@
 import expect from 'expect.js'
 import {validate, string} from '../src/validate'
 
-
-
 describe('Library Validate', () => {
-
   describe('#validate(...fn)(value)', () => {
-
     it('must accept more than one parameter', () => {
       let result = validate(string.minLength(0), string.maxLength(10))
       expect(result('Test')).to.be.ok()
@@ -31,7 +27,5 @@ describe('Library Validate', () => {
       let result = validate(undefined)
       expect(result.bind(this, '')).to.throwError()
     })
-
   })
-
 })
