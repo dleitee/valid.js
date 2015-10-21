@@ -6,7 +6,7 @@ import {_isDate} from './lib/date'
  * @return boolean
  */
 function isDate(date) {
-    return _isDate(date)
+  return _isDate(date)
 }
 
 /*
@@ -14,8 +14,8 @@ function isDate(date) {
  * @param max
  * @return boolean
  */
-function maxDate(max = new Date(3000,1,1)){
-    return (value) => _isDate(value) && value <= max
+function maxDate(max = new Date(3000, 1, 1)) {
+  return value => _isDate(value) && value <= max
 }
 
 /*
@@ -23,8 +23,8 @@ function maxDate(max = new Date(3000,1,1)){
  * @param min
  * @return boolean
  */
-function minDate(min = new Date(1900,1,1)){
-    return (value) => _isDate(value) && value >= min
+function minDate(min = new Date(1900, 1, 1)) {
+  return value => _isDate(value) && value >= min
 }
 
 /*
@@ -33,8 +33,8 @@ function minDate(min = new Date(1900,1,1)){
  * @param max
  * @return boolean
  */
-function between(min = new Date(1900,1,1), max = new Date(3000,1,1)){
-    return (value) => this.minDate(min)(value) &&
+function between(min = new Date(1900, 1, 1), max = new Date(3000, 1, 1)) {
+  return value => this.minDate(min)(value) &&
                         this.maxDate(max)(value)
 }
 
@@ -42,8 +42,8 @@ function between(min = new Date(1900,1,1), max = new Date(3000,1,1)){
  * Export constant date
  */
 export const date = {
-    maxDate: maxDate,
-    minDate: minDate,
-    between: between,
-    isDate: isDate
+  maxDate: maxDate,
+  minDate: minDate,
+  between: between,
+  isDate: isDate
 }
