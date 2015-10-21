@@ -5,7 +5,7 @@
  * @return boolean
  */
 function isTrue(value) {
-  return value == true;
+  return value === true;
 }
 
 /*
@@ -14,7 +14,7 @@ function isTrue(value) {
  * @return boolean
  */
 function isFalse(value) {
-  return value == false;
+  return value === false;
 }
 
 /*
