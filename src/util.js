@@ -1,6 +1,5 @@
 import {isNil} from './lib/isnil.js'
 import {_isArray} from './lib/array.js'
-import {_isInteger} from './lib/integer.js'
 import {_isNumber} from './lib/number.js'
 import {_isObject} from './lib/object.js'
 import {_isString} from './lib/string.js'
@@ -12,25 +11,27 @@ import {string} from './string.js'
  * @return boolean
  */
 function isRequired(value) {
-  if(isNil(value))
+  if (isNil(value)) {
     return false
+  }
 
-  if(_isArray(value))
+  if (_isArray(value)) {
     return value.length > 0
+  }
 
-  if(_isInteger(value))
-    return !!value
-
-  if(_isNumber(value))
+  if (_isNumber(value)) {
     return value > 0
+  }
 
-  if(_isObject(value))
+  if (_isObject(value)) {
     return Object.keys(value).length > 0
+  }
 
-  if(_isString(value))
+  if (_isString(value)) {
     return value.length > 0
+  }
 
-  return !!value
+  return Boolean(value)
 }
 
 /*
@@ -45,8 +46,8 @@ function isEmail(email) {
   var sQuotedPair = '\\x5c[\\x00-\\x7f]'
   var sDomainLiteral = '\\x5b(' + sDtext + '|' + sQuotedPair + ')*\\x5d'
   var sQuotedString = '\\x22(' + sQtext + '|' + sQuotedPair + ')*\\x22'
-  var sDomain_ref = sAtom
-  var sSubDomain = '(' + sDomain_ref + '|' + sDomainLiteral + ')'
+  var sDomainRef = sAtom
+  var sSubDomain = '(' + sDomainRef + '|' + sDomainLiteral + ')'
   var sWord = '(' + sAtom + '|' + sQuotedString + ')'
   var sDomain = sSubDomain + '(\\x2e' + sSubDomain + ')*'
   var sLocalPart = sWord + '(\\x2e' + sWord + ')*'
@@ -68,8 +69,8 @@ function isCep(cep) {
  * Export constant util
  */
 export const util = {
-    isRequired: isRequired,
-    isEmail: isEmail,
-    isCep: isCep
+  isRequired: isRequired,
+  isEmail: isEmail,
+  isCep: isCep
 }
 

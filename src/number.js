@@ -6,7 +6,7 @@ import {_isNumber} from './lib/number'
  * @return boolean
  */
 function isNumber(number) {
-    return _isNumber(number)
+  return _isNumber(number)
 }
 
 /*
@@ -14,8 +14,8 @@ function isNumber(number) {
  * @param maxValue
  * @return boolean
  */
-function maxNumber(maxValue = Number.MAX_VALUE){
-    return (value) => _isNumber(value) && value <= maxValue
+function maxNumber(maxValue = Number.MAX_VALUE) {
+  return value => _isNumber(value) && value <= maxValue
 }
 
 /*
@@ -23,8 +23,8 @@ function maxNumber(maxValue = Number.MAX_VALUE){
  * @param minValue
  * @return boolean
  */
-function minNumber(minValue = Number.MIN_VALUE){
-    return (value) => _isNumber(value) && value >= minValue
+function minNumber(minValue = Number.MIN_VALUE) {
+  return value => _isNumber(value) && value >= minValue
 }
 
 /*
@@ -33,8 +33,8 @@ function minNumber(minValue = Number.MIN_VALUE){
  * @param maxValue
  * @return boolean
  */
-function between(minValue = Number.MIN_VALUE, maxValue = Number.MAX_VALUE){
-    return (value) => this.minNumber(minValue)(value) &&
+function between(minValue = Number.MIN_VALUE, maxValue = Number.MAX_VALUE) {
+  return value => this.minNumber(minValue)(value) &&
                         this.maxNumber(maxValue)(value)
 }
 
@@ -42,8 +42,8 @@ function between(minValue = Number.MIN_VALUE, maxValue = Number.MAX_VALUE){
  * Export constant number
  */
 export const number = {
-    maxNumber: maxNumber,
-    minNumber: minNumber,
-    between: between,
-    isNumber: isNumber
+  maxNumber: maxNumber,
+  minNumber: minNumber,
+  between: between,
+  isNumber: isNumber
 }

@@ -9,15 +9,16 @@ export * from './date'
 
 export const validate =
   (...fn) =>
-    (value) => {
-      if(isNil(value))
+    value => {
+      if (isNil(value)) {
         return false
-      else {
-        return reduce((acc, x) => {
-          if(isNil(x))
-            throw new Error('The function for validation is null or undefined.')
-          else
-            return acc && x(value)
-        }, true, fn)
       }
+
+      return reduce((acc, x) => {
+        if (isNil(x)) {
+          throw new Error('The function for validation is null or undefined.')
+        } else {
+          return acc && x(value)
+        }
+      }, true, fn)
     }

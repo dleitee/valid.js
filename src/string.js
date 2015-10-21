@@ -17,7 +17,7 @@ function isString(string) {
  * @return boolean
  */
 function minLength(min = Number.MIN_VALUE) {
-  return (string) => _isString(string) && string.length >= min
+  return string => _isString(string) && string.length >= min
 }
 
 /*
@@ -27,10 +27,10 @@ function minLength(min = Number.MIN_VALUE) {
  * @return boolean
  */
 function maxLength(max = Number.MAX_VALUE) {
-  if(isNil(max)) {
+  if (isNil(max)) {
     max = Number.MAX_VALUE
   }
-  return (string) => _isString(string) && string.length <= max
+  return string => _isString(string) && string.length <= max
 }
 
 /*
@@ -40,7 +40,7 @@ function maxLength(max = Number.MAX_VALUE) {
  * @return boolean
  */
 function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
-  return (string) => this.minLength(min)(string) && this.maxLength(max)(string)
+  return string => this.minLength(min)(string) && this.maxLength(max)(string)
 }
 
 /*
@@ -50,8 +50,8 @@ function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
  * @param lastIndex
  * @return boolean
  */
-function regex(expression){
-  return (string) => {
+function regex(expression) {
+  return string => {
     var reg = new RegExp(expression)
     return reg.test(string)
   }
