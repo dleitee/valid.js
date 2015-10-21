@@ -15,8 +15,6 @@ import es6ify from 'es6ify'
 import deglobalify from 'deglobalify'
 import source from 'vinyl-source-stream'
 import connect from 'gulp-connect'
-import jshint from 'gulp-jshint'
-import stylish from 'jshint-stylish'
 
 gulp.task('browserify', () => {
   browserify({
@@ -35,13 +33,7 @@ gulp.task('browserify', () => {
   .pipe(buffer())
   .pipe(uglify())
   .pipe(gulp.dest('dist'))
-  .pipe(gulp.dest('public'));
-})
-
-gulp.task('lint', () => {
-  gulp.src('./src/string.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter(stylish));
+  .pipe(gulp.dest('public'))
 })
 
 gulp.task('server', () => {
