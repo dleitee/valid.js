@@ -73,4 +73,3 @@ export const util = {
   isEmail: isEmail,
   isCep: isCep
 }
-
