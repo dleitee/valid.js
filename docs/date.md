@@ -28,10 +28,10 @@ Validates that 'date' is less than or equal to (<=) the value
 ```es6
 import {validate, date} from 'valid.js'
 
-let isvalid = validate(date.maxNumber(15))
-let result = isvalid(15)
+let isvalid = validate(date.maxDate(new Date(2016, 0, 1)))
+let result = isvalid(new Date(2015, 9, 24))
 // result => true
-let resultFalse = isvalid(16)
+let resultFalse = isvalid(new Date(2016, 1, 1))
 // resultFalse => false
 ```
 
@@ -44,10 +44,10 @@ Validates that 'date' is greater than or equal to (>=) the value
 ```es6
 import {validate, date} from 'valid.js'
 
-let isvalid = validate(date.minNumber(15))
-let result = isvalid(15)
+let isvalid = validate(date.minDate(new Date(2015, 0, 1)))
+let result = isvalid(new Date(2015, 9, 24))
 // result => true
-let resultFalse = isvalid(14)
+let resultFalse = isvalid(new Date(2014, 10, 1))
 // resultFalse => false
 ```
 
@@ -60,10 +60,12 @@ Validates if date is within the range
 ```es6
 import {validate, date} from 'valid.js'
 
-let isvalid = validate(date.between(10, 15))
-let result = isvalid(13)
+let min = new Date(2015, 0, 1)
+let max = new Date(2016, 0, 1)
+let isvalid = validate(date.between(min, max))
+let result = isvalid(new Date(2015, 9, 24))
 // result => true
-let resultFalse = isvalid(9)
+let resultFalse = isvalid(new Date(2014, 5, 1))
 // resultFalse => false
 ```
 
