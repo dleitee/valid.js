@@ -56,6 +56,21 @@ function isEmail(email) {
   return string.regex(sValidEmail)(email)
 }
 
+/**
+ * Check for URL
+ *
+ * Copyright (c) 2010-2013 Diego Perini (http://www.iport.it), MIT licensed
+ * https://gist.github.com/dperini/729294
+ * see also https://mathiasbynens.be/demo/url-regex
+ *
+ * @params url
+ * @return boolean
+ */
+function isURL(url) {
+  const regex = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i
+  return string.regex(regex)(url)
+}
+
 /*
  * Checks for cep
  * @params cep
@@ -71,5 +86,6 @@ function isCep(cep) {
 export const util = {
   isRequired: isRequired,
   isEmail: isEmail,
-  isCep: isCep
+  isCep: isCep,
+  isURL: isURL
 }

@@ -49,5 +49,19 @@ let resultFalse = isvalid('88075290')
 // resultFalse => false
 ```
 
+## isURL
+
+Checks for url
+
+#### Usage
+```es6
+import {validate, util} from 'valid.js'
+
+let isvalid = validate(util.isURL)
+let result = isvalid('https://github.com')
+// result => true
+let resultFalse = isvalid('http://.google.com')
+// resultFalse => false
+```
 
 .
