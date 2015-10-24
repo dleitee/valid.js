@@ -20,10 +20,12 @@ gulp.task('browserify', () => {
   browserify({
     entries: './src/validate.js',
     transform: [babelify, es6ify, deglobalify],
+
     // Generate a UMD bundle for the supplied export name.
     // This bundle works with other module systems and sets the name
     // given as a window global if no module system is found.
     standalone: 'valid.js',
+
     // Enable source maps that allow you to debug your files
     // separately.
     debug: true
