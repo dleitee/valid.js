@@ -92,6 +92,7 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
     - [x] isRequired
     - [x] isEmail
     - [x] isCep
+    - [x] isUrl
 
 # LICENSE
 The MIT License (MIT)
