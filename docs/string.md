@@ -48,7 +48,7 @@ let resultFalse = isvalid('Test ValidateJS Brazil')
 // resultFalse => false
 ```
 
-## lenght(minValue, maxValue)
+## length(minValue, maxValue)
 
 Validates that the length of the string is within the range
 
