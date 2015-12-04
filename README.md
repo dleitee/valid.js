@@ -1,4 +1,4 @@
-# validate.js
+# valid.js
 
 A simple library for data validation.
 
