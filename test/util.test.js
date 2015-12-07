@@ -262,4 +262,46 @@ describe('Functions Util', () => {
       })
     })
   })
+
+  describe('#isHexColor(value)', () => {
+    it('should be true when value is #000000', () => {
+      let result = validate(util.isHexColor)
+      expect(result('#000000')).to.be.ok()
+    })
+
+    it('should be true when value is #1F9a0E', () => {
+      let result = validate(util.isHexColor)
+      expect(result('#1F9a0E')).to.be.ok()
+    })
+
+    it('should be true when value is #fff', () => {
+      let result = validate(util.isHexColor)
+      expect(result('#fff')).to.be.ok()
+    })
+
+    it('should be false when value is #aaeefg', () => {
+      let result = validate(util.isHexColor)
+      expect(result('#aaeefg')).to.not.be.ok()
+    })
+
+    it('should be false when value is missing hash', () => {
+      let result = validate(util.isHexColor)
+      expect(result('000000')).to.not.be.ok()
+    })
+
+    it('should be false when value is too short(5)', () => {
+      let result = validate(util.isHexColor)
+      expect(result('#00000')).to.not.be.ok()
+    })
+
+    it('should be false when value is too long', () => {
+      let result = validate(util.isHexColor)
+      expect(result('#ff00ffa')).to.not.be.ok()
+    })
+
+    it('should be false when value is too short(2)', () => {
+      let result = validate(util.isHexColor)
+      expect(result('#00')).to.not.be.ok()
+    })
+  })
 })
