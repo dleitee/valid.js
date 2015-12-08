@@ -64,4 +64,21 @@ let resultFalse = isvalid('http://.google.com')
 // resultFalse => false
 ```
 
+## isHexColor
+
+Checks for hex color. Supports both standard and shorthand
+
+#### Usage
+```es6
+import {validate, util} from 'valid.js'
+
+let isvalid = validate(util.isHexColor)
+let result = isvalid('#1CE')
+// result => true
+let result = isvalid('#c0ffee')
+// result => true
+let resultFalse = isvalid('ff00gg')
+// resultFalse => false
+```
+
 .

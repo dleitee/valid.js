@@ -93,6 +93,7 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
     - [x] isEmail
     - [x] isCep
     - [x] isUrl
+    - [x] isHexColor
 
 # LICENSE
 The MIT License (MIT)

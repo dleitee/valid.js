@@ -81,11 +81,21 @@ function isCep(cep) {
 }
 
 /*
+ * Checks for hex color
+ * @params color
+ * @return boolean
+ */
+function isHexColor(color) {
+  return string.regex(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/)(color)
+}
+
+/*
  * Export constant util
  */
 export const util = {
   isRequired: isRequired,
   isEmail: isEmail,
   isCep: isCep,
-  isURL: isURL
+  isURL: isURL,
+  isHexColor: isHexColor
 }
