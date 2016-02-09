@@ -6,6 +6,8 @@ describe('Functions CreditCard', () => {
   let validAmex = '345420937661290'
   let validMasterCard = '5156602052038753'
   let validDiners = '38266178165885'
+  let validElo = '6362970000457013'
+  let validHipercard = '6062825624254001'
 
   describe('#isVisa(creditCard)', () => {
     it('should be true when value is valid visa credit card', () => {
@@ -79,6 +81,44 @@ describe('Functions CreditCard', () => {
     })
     it('should be false when value is blank', () => {
       let result = creditCard.isAmex('')
+      expect(result).to.not.be.ok()
+    })
+  })
+
+  describe('#isElo(creditCard)', () => {
+    it('should be true when value is valid elo credit card', () => {
+      let result = creditCard.isElo(validElo)
+      expect(result).to.be.ok()
+    })
+    it('should be false when value is valid diners credit card', () => {
+      let result = creditCard.isElo(validDiners)
+      expect(result).to.not.be.ok()
+    })
+    it('should be false when value is valid visa credit card', () => {
+      let result = creditCard.isElo(validVisa)
+      expect(result).to.not.be.ok()
+    })
+    it('should be false when value is blank', () => {
+      let result = creditCard.isElo('')
+      expect(result).to.not.be.ok()
+    })
+  })
+
+  describe('#isHipercard(creditCard)', () => {
+    it('should be true when value is valid hipercard credit card', () => {
+      let result = creditCard.isHipercard(validHipercard)
+      expect(result).to.be.ok()
+    })
+    it('should be false when value is valid diners credit card', () => {
+      let result = creditCard.isHipercard(validDiners)
+      expect(result).to.not.be.ok()
+    })
+    it('should be false when value is valid visa credit card', () => {
+      let result = creditCard.isHipercard(validVisa)
+      expect(result).to.not.be.ok()
+    })
+    it('should be false when value is blank', () => {
+      let result = creditCard.isHipercard('')
       expect(result).to.not.be.ok()
     })
   })
