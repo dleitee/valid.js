@@ -6,6 +6,7 @@ export * from './util'
 export * from './boolean'
 export * from './number'
 export * from './date'
+export * from './creditCard'
 
 export const validate =
   (...fn) =>
