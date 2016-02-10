@@ -28,6 +28,10 @@ function isAmex(creditCard) {
   return amexRegex.test(creditCard)
 }
 
+function isCreditCard(creditCard) {
+  return isAmex(creditCard) || isDiners(creditCard) || isMasterCard(creditCard) || isHipercard(creditCard) || isElo(creditCard) || isVisa(creditCard) || false
+}
+
 /*
  * Export constant creditCard
  */
@@ -37,5 +41,6 @@ export const creditCard = {
   isHipercard: isHipercard,
   isMasterCard: isMasterCard,
   isDiners: isDiners,
-  isAmex: isAmex
+  isAmex: isAmex,
+  isCreditCard: isCreditCard
 }
