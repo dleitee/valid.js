@@ -8,6 +8,7 @@ describe('Functions CreditCard', () => {
   let validDiners = '38266178165885'
   let validElo = '6362970000457013'
   let validHipercard = '6062825624254001'
+  let invalidCreditCard = '00000000'
 
   describe('#isVisa(creditCard)', () => {
     it('should be true when value is valid visa credit card', () => {
@@ -119,6 +120,21 @@ describe('Functions CreditCard', () => {
     })
     it('should be false when value is blank', () => {
       let result = creditCard.isHipercard('')
+      expect(result).to.not.be.ok()
+    })
+  })
+
+  describe('#isCreditCard(creditCard)', () => {
+    it('should be true when value is valid hipercard credit card', () => {
+      let result = creditCard.isCreditCard(validHipercard)
+      expect(result).to.be.ok()
+    })
+    it('should be false when value is invalid credit card', () => {
+      let result = creditCard.isCreditCard(invalidCreditCard)
+      expect(result).to.not.be.ok()
+    })
+    it('should be false when value is blank', () => {
+      let result = creditCard.isCreditCard('')
       expect(result).to.not.be.ok()
     })
   })
