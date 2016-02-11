@@ -94,6 +94,14 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
     - [x] isCep
     - [x] isUrl
     - [x] isHexColor
+- [x] [Credit Card](https://github.com/dleitee/valid.js/blob/master/docs/creditCard.md)
+    - [x] isVisa
+    - [x] isElo
+    - [x] isHipercard
+    - [x] isMasterCard
+    - [x] isDiners
+    - [x] isAmex
+    - [x] isCreditCard
 
 # LICENSE
 The MIT License (MIT)
