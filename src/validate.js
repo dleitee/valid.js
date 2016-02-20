@@ -8,6 +8,7 @@ export * from './number'
 export * from './date'
 export * from './creditCard'
 export * from './ip'
+export * from './cpf'
 
 export const validate =
   (...fn) =>
