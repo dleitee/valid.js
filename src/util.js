@@ -90,6 +90,78 @@ function isHexColor(color) {
 }
 
 /*
+ * Validate CPF string with the following format 000.000.000-00
+ * Dots and dash separators are optional
+ * @param string
+ * @return boolean
+ */
+function isCpf(cpfNumber) {
+  var cpfRegex = /^(\d{3}[\.]?\d{3}[\.]?\d{3}[-]?\d{2})$/
+  if (cpfRegex.test(cpfNumber)) {
+    var cpf = cpfNumber.replace(/\.|-/g, '')
+    if (cpf === '00000000000' ||
+        cpf === '11111111111' ||
+        cpf === '22222222222' ||
+        cpf === '33333333333' ||
+        cpf === '44444444444' ||
+        cpf === '55555555555' ||
+        cpf === '66666666666' ||
+        cpf === '77777777777' ||
+        cpf === '88888888888' ||
+        cpf === '99999999999') {
+      return false
+    }
+
+    var final
+    var sum = 0
+    for (var firstIndex = 0; firstIndex < 9; firstIndex++) {
+      sum += parseInt(cpf.charAt(firstIndex), 10) * (10 - firstIndex)
+    }
+
+    final = 11 - (sum % 11)
+
+    if (final === 10 || final === 11) {
+      final = 0
+    }
+
+    if (final !== parseInt(cpf.charAt(9), 10)) {
+      return false
+    }
+
+    sum = 0
+    for (var secondIndex = 0; secondIndex < 10; secondIndex++) {
+      sum += parseInt(cpf.charAt(secondIndex), 10) * (11 - secondIndex)
+    }
+
+    final = 11 - (sum % 11)
+
+    if (final === 10 || final === 11) {
+      final = 0
+    }
+
+    if (final !== parseInt(cpf.charAt(10), 10)) {
+      return false
+    }
+
+    return true
+  }
+}
+
+/*
+ * Validate CPNJ string with the following format 00.000.000/0000-00
+ * Dots, dash and slash separators are optional
+ * @param string
+ * @return boolean
+ */
+function isCnpj(cnpjNumber) {
+  var cnpjRegex = /^(\d{2}[\.]?\d{3}[\.]?\d{3}[\/]?\d{4}[-]?\d{2})$/
+  if (cnpjRegex.test(cnpjNumber)) {
+    var cnpj = cnpjNumber.replace(/\.|-|\//g, '')
+    return cnpj
+  }
+}
+
+/*
  * Export constant util
  */
 export const util = {
@@ -97,5 +169,7 @@ export const util = {
   isEmail: isEmail,
   isCep: isCep,
   isURL: isURL,
-  isHexColor: isHexColor
+  isHexColor: isHexColor,
+  isCpf: isCpf,
+  isCnpj: isCnpj
 }
