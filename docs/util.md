@@ -81,4 +81,40 @@ let resultFalse = isvalid('ff00gg')
 // resultFalse => false
 ```
 
-.
+## isCpf
+
+Checks for valid CPF number
+
+#### Usage
+```es6
+import {validate, util} from 'valid.js'
+
+let isvalid = validate(util.isCpf)
+let result = isvalid('948.155.461-93')
+// result => true
+let result = isvalid('94815546193')
+// result => true
+let result = isvalid('948155.46193')
+// result => true
+let result = isvalid('948.155.461-94')
+// result => false
+```
+
+## isCnpj
+
+Checks for valid CNPJ number
+
+#### Usage
+```es6
+import {validate, util} from 'valid.js'
+
+let isvalid = validate(util.isCnpj)
+let result = isvalid('43.132.546/0001-09')
+// result => true
+let result = isvalid('43132546000109')
+// result => true
+let result = isvalid('43132546/000109')
+// result => true
+let result = isvalid('43.132.546/0001-10')
+// result => false
+```
