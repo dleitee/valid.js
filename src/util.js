@@ -185,7 +185,8 @@ function isCnpj(cnpjNumber) {
     }
 
     var results = sum % 11 < 2 ? 0 : 11 - sum % 11
-    if (results !== digits.charAt(0)) {
+    if (results !== parseInt(digits.charAt(0), 10)) {
+      console.log('if')
       return false
     }
 
@@ -202,7 +203,7 @@ function isCnpj(cnpjNumber) {
     }
 
     results = sum % 11 < 2 ? 0 : 11 - sum % 11
-    if (results !== digits.charAt(1)) {
+    if (results !== parseInt(digits.charAt(1), 10)) {
       return false
     }
     return true

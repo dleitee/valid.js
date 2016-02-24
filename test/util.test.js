@@ -379,7 +379,7 @@ describe('Functions Util', () => {
       let result = validate(util.isCnpj)
       expect(result(invalidCnpj2)).to.not.be.ok()
     })
-    it('should be false when value has all the same numbers ', () => {
+    it('should be false when value has all the same numbers', () => {
       let result = validate(util.isCnpj)
       expect(result(invalidCnpj3)).to.not.be.ok()
     })
