@@ -145,6 +145,7 @@ function isCpf(cpfNumber) {
 
     return true
   }
+  return false
 }
 
 /*
@@ -157,8 +158,56 @@ function isCnpj(cnpjNumber) {
   var cnpjRegex = /^(\d{2}[\.]?\d{3}[\.]?\d{3}[\/]?\d{4}[-]?\d{2})$/
   if (cnpjRegex.test(cnpjNumber)) {
     var cnpj = cnpjNumber.replace(/\.|-|\//g, '')
-    return cnpj
+    if (cnpj === '00000000000000' ||
+        cnpj === '11111111111111' ||
+        cnpj === '22222222222222' ||
+        cnpj === '33333333333333' ||
+        cnpj === '44444444444444' ||
+        cnpj === '55555555555555' ||
+        cnpj === '66666666666666' ||
+        cnpj === '77777777777777' ||
+        cnpj === '88888888888888' ||
+        cnpj === '99999999999999') {
+      return false
+    }
+
+    var sum = 0
+    var length = 12
+    var num = cnpj.substring(0, length)
+    var digits = cnpj.substring(length)
+    var pos = length - 7
+
+    for (var firstIndex = length; firstIndex >= 1; firstIndex--) {
+      sum += num.charAt(length - firstIndex) * pos--
+      if (pos < 2) {
+        pos = 9
+      }
+    }
+
+    var results = sum % 11 < 2 ? 0 : 11 - sum % 11
+    if (results !== digits.charAt(0)) {
+      return false
+    }
+
+    length += 1
+    num = cnpj.substring(0, length)
+    sum = 0
+    pos = length - 7
+
+    for (var secondIndex = length; secondIndex >= 1; secondIndex--) {
+      sum += num.charAt(length - secondIndex) * pos--
+      if (pos < 2) {
+        pos = 9
+      }
+    }
+
+    results = sum % 11 < 2 ? 0 : 11 - sum % 11
+    if (results !== digits.charAt(1)) {
+      return false
+    }
+    return true
   }
+  return false
 }
 
 /*
