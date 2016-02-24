@@ -304,4 +304,96 @@ describe('Functions Util', () => {
       expect(result('#00')).to.not.be.ok()
     })
   })
+
+  describe('#isCpf(cpfNumber)', () => {
+    let validCpf1 = '31227496451'
+    let validCpf2 = '849.778.168-62'
+    let validCpf3 = '984248.51374'
+    let invalidCpf1 = '849.920.384.22'
+    let invalidCpf2 = '84992038222'
+    let invalidCpf3 = '111.111.111-11'
+
+    it('should be true when value is a valid CPF number without separators', () => {
+      let result = validate(util.isCpf)
+      expect(result(validCpf1)).to.be.ok()
+    })
+    it('should be true when value is a valid CPF number with dots and dash separators', () => {
+      let result = validate(util.isCpf)
+      expect(result(validCpf2)).to.be.ok()
+    })
+    it('should be true when value is a valid CPF number even if miss some separators', () => {
+      let result = validate(util.isCpf)
+      expect(result(validCpf3)).to.be.ok()
+    })
+    it('should be false when value is CPF number, but with wrong separators', () => {
+      let result = validate(util.isCpf)
+      expect(result(invalidCpf1)).to.not.be.ok()
+    })
+    it('should be false when value is invalid CPF number', () => {
+      let result = validate(util.isCpf)
+      expect(result(invalidCpf2)).to.not.be.ok()
+    })
+    it('should be false when value has all the same numbers ', () => {
+      let result = validate(util.isCpf)
+      expect(result(invalidCpf3)).to.not.be.ok()
+    })
+    it('should be false when value is null', () => {
+      let result = validate(util.isCpf)
+      expect(result(null)).to.not.be.ok()
+    })
+    it('should be false when value is undefined', () => {
+      let result = validate(util.isCpf)
+      expect(result(undefined)).to.not.be.ok()
+    })
+    it('should be false when value is blank', () => {
+      let result = validate(util.isCpf)
+      expect(result('')).to.not.be.ok()
+    })
+  })
+
+  describe('#isCnpj(cnpjNumber)', () => {
+    let validCnpj1 = '76486875000107'
+    let validCnpj2 = '64.645.368/0001-90'
+    let validCnpj3 = '67152871/000100'
+    let invalidCnpj1 = '24.765.837.0001.90'
+    let invalidCnpj2 = '05880288000121'
+    let invalidCnpj3 = '11111111111111'
+
+    it('should be true when value is a valid CNPJ number without separators', () => {
+      let result = validate(util.isCnpj)
+      expect(result(validCnpj1)).to.be.ok()
+    })
+    it('should be true when value is a valid CNPJ number with dots, dash and slash separators', () => {
+      let result = validate(util.isCnpj)
+      expect(result(validCnpj2)).to.be.ok()
+    })
+    it('should be true when value is a valid CNPJ number even if miss some separators', () => {
+      let result = validate(util.isCnpj)
+      expect(result(validCnpj3)).to.be.ok()
+    })
+    it('should be false when value is CNPJ number, but with wrong separators', () => {
+      let result = validate(util.isCnpj)
+      expect(result(invalidCnpj1)).to.not.be.ok()
+    })
+    it('should be false when value is invalid CNPJ number', () => {
+      let result = validate(util.isCnpj)
+      expect(result(invalidCnpj2)).to.not.be.ok()
+    })
+    it('should be false when value has all the same numbers', () => {
+      let result = validate(util.isCnpj)
+      expect(result(invalidCnpj3)).to.not.be.ok()
+    })
+    it('should be false when value is null', () => {
+      let result = validate(util.isCnpj)
+      expect(result(null)).to.not.be.ok()
+    })
+    it('should be false when value is undefined', () => {
+      let result = validate(util.isCnpj)
+      expect(result(undefined)).to.not.be.ok()
+    })
+    it('should be false when value is blank', () => {
+      let result = validate(util.isCnpj)
+      expect(result('')).to.not.be.ok()
+    })
+  })
 })
