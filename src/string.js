@@ -52,7 +52,7 @@ function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
  */
 function regex(expression) {
   return string => {
-    var reg = new RegExp(expression)
+    let reg = new RegExp(expression)
     return reg.test(string)
   }
 }

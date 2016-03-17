@@ -40,19 +40,19 @@ function isRequired(value) {
  * @return boolean
  */
 function isEmail(email) {
-  var sQtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]'
-  var sDtext = '[^\\x0d\\x5b-\\x5d\\x80-\\xff]'
-  var sAtom = '[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+'
-  var sQuotedPair = '\\x5c[\\x00-\\x7f]'
-  var sDomainLiteral = '\\x5b(' + sDtext + '|' + sQuotedPair + ')*\\x5d'
-  var sQuotedString = '\\x22(' + sQtext + '|' + sQuotedPair + ')*\\x22'
-  var sDomainRef = sAtom
-  var sSubDomain = '(' + sDomainRef + '|' + sDomainLiteral + ')'
-  var sWord = '(' + sAtom + '|' + sQuotedString + ')'
-  var sDomain = sSubDomain + '(\\x2e' + sSubDomain + ')*'
-  var sLocalPart = sWord + '(\\x2e' + sWord + ')*'
-  var sAddrSpec = sLocalPart + '\\x40' + sDomain
-  var sValidEmail = '^' + sAddrSpec + '$'
+  let sQtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]'
+  let sDtext = '[^\\x0d\\x5b-\\x5d\\x80-\\xff]'
+  let sAtom = '[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+'
+  let sQuotedPair = '\\x5c[\\x00-\\x7f]'
+  let sDomainLiteral = '\\x5b(' + sDtext + '|' + sQuotedPair + ')*\\x5d'
+  let sQuotedString = '\\x22(' + sQtext + '|' + sQuotedPair + ')*\\x22'
+  let sDomainRef = sAtom
+  let sSubDomain = '(' + sDomainRef + '|' + sDomainLiteral + ')'
+  let sWord = '(' + sAtom + '|' + sQuotedString + ')'
+  let sDomain = sSubDomain + '(\\x2e' + sSubDomain + ')*'
+  let sLocalPart = sWord + '(\\x2e' + sWord + ')*'
+  let sAddrSpec = sLocalPart + '\\x40' + sDomain
+  let sValidEmail = '^' + sAddrSpec + '$'
   return string.regex(sValidEmail)(email)
 }
 
@@ -96,9 +96,9 @@ function isHexColor(color) {
  * @return boolean
  */
 function isCpf(cpfNumber) {
-  var cpfRegex = /^(\d{3}[\.]?\d{3}[\.]?\d{3}[-]?\d{2})$/
+  let cpfRegex = /^(\d{3}[\.]?\d{3}[\.]?\d{3}[-]?\d{2})$/
   if (cpfRegex.test(cpfNumber)) {
-    var cpf = cpfNumber.replace(/\.|-/g, '')
+    let cpf = cpfNumber.replace(/\.|-/g, '')
     if (cpf === '00000000000' ||
         cpf === '11111111111' ||
         cpf === '22222222222' ||
@@ -112,9 +112,9 @@ function isCpf(cpfNumber) {
       return false
     }
 
-    var final
-    var sum = 0
-    for (var firstIndex = 0; firstIndex < 9; firstIndex++) {
+    let final
+    let sum = 0
+    for (let firstIndex = 0; firstIndex < 9; firstIndex++) {
       sum += parseInt(cpf.charAt(firstIndex), 10) * (10 - firstIndex)
     }
 
@@ -129,7 +129,7 @@ function isCpf(cpfNumber) {
     }
 
     sum = 0
-    for (var secondIndex = 0; secondIndex < 10; secondIndex++) {
+    for (let secondIndex = 0; secondIndex < 10; secondIndex++) {
       sum += parseInt(cpf.charAt(secondIndex), 10) * (11 - secondIndex)
     }
 
@@ -155,9 +155,9 @@ function isCpf(cpfNumber) {
  * @return boolean
  */
 function isCnpj(cnpjNumber) {
-  var cnpjRegex = /^(\d{2}[\.]?\d{3}[\.]?\d{3}[\/]?\d{4}[-]?\d{2})$/
+  let cnpjRegex = /^(\d{2}[\.]?\d{3}[\.]?\d{3}[\/]?\d{4}[-]?\d{2})$/
   if (cnpjRegex.test(cnpjNumber)) {
-    var cnpj = cnpjNumber.replace(/\.|-|\//g, '')
+    let cnpj = cnpjNumber.replace(/\.|-|\//g, '')
     if (cnpj === '00000000000000' ||
         cnpj === '11111111111111' ||
         cnpj === '22222222222222' ||
@@ -171,20 +171,20 @@ function isCnpj(cnpjNumber) {
       return false
     }
 
-    var sum = 0
-    var length = 12
-    var num = cnpj.substring(0, length)
-    var digits = cnpj.substring(length)
-    var pos = length - 7
+    let sum = 0
+    let length = 12
+    let num = cnpj.substring(0, length)
+    let digits = cnpj.substring(length)
+    let pos = length - 7
 
-    for (var firstIndex = length; firstIndex >= 1; firstIndex--) {
+    for (let firstIndex = length; firstIndex >= 1; firstIndex--) {
       sum += num.charAt(length - firstIndex) * pos--
       if (pos < 2) {
         pos = 9
       }
     }
 
-    var results = sum % 11 < 2 ? 0 : 11 - sum % 11
+    let results = sum % 11 < 2 ? 0 : 11 - sum % 11
     if (results !== parseInt(digits.charAt(0), 10)) {
       console.log('if')
       return false
@@ -195,7 +195,7 @@ function isCnpj(cnpjNumber) {
     sum = 0
     pos = length - 7
 
-    for (var secondIndex = length; secondIndex >= 1; secondIndex--) {
+    for (let secondIndex = length; secondIndex >= 1; secondIndex--) {
       sum += num.charAt(length - secondIndex) * pos--
       if (pos < 2) {
         pos = 9
