@@ -12,7 +12,7 @@ Checks for true
 ```es6
 import {validate, bool} from 'valid.js'
 
-let isvalid = validate(number.isTrue)
+let isvalid = validate(bool.isTrue)
 let result = isvalid(true)
 // result => true
 let resultFalse = isvalid(false)
@@ -27,7 +27,7 @@ Checks for false
 ```es6
 import {validate, bool} from 'valid.js'
 
-let isvalid = validate(number.isFalse)
+let isvalid = validate(bool.isFalse)
 let result = isvalid(false)
 // result => true
 let resultFalse = isvalid(true)
