@@ -19,10 +19,14 @@ bower install valid.js
 ### With ES6/import
 
 ```javascript
-import {validate, string, util} from 'valid.js'
+import {validate, string, util, isValid} from 'valid.js'
 
-let isvalid = validate(string.maxLength(15), util.isRequired)
-let result = isvalid('Test ValidateJS')
+let testIsValid = validate(string.maxLength(15), util.isRequired)
+let result = testIsValid('Test ValidateJS')
+// result => true
+
+// or using the 'isValid' shorthand method
+let result = isValid('Test ValidateJS', [string.maxLength(15), util.isRequired])
 // result => true
 ```
 
@@ -31,11 +35,16 @@ let result = isvalid('Test ValidateJS')
 ```javascript
 var validatejs = require('valid.js')
 var validate = validatejs.validate,
+    isValid = validatejs.isValid,
     string = validatejs.string,
     util = validatejs.util
 
-var isvalid = validate(string.maxLength(15), util.isRequired)
-var result = isvalid('Test ValidateJS')
+var testIsValid = validate(string.maxLength(15), util.isRequired)
+var result = testIsValid('Test ValidateJS')
+// result => true
+
+// or using the 'isValid' shorthand method
+var result = isValid('Test ValidateJS', [string.maxLength(15), util.isRequired])
 // result => true
 ```
 
@@ -50,8 +59,8 @@ var validate = validate.validate
 var string = validate.string
 var util = validate.util
 
-var isvalid = validate(string.maxLength(15), util.isRequired)
-var result = isvalid('Test ValidateJS')
+var testIsValid = validate(string.maxLength(15), util.isRequired)
+var result = testIsValid('Test ValidateJS')
 // result => true
 ```
 OR
@@ -60,8 +69,17 @@ var validate = window.validate.validate
 var string = window.validate.string
 var util = window.validate.util
 
-var isvalid = validate(string.maxLength(15), util.isRequired)
-var result = isvalid('Test ValidateJS')
+var testIsValid = validate(string.maxLength(15), util.isRequired)
+var result = testIsValid('Test ValidateJS')
+// result => true
+```
+OR
+```javascript
+var isValid = window.validate.isValid
+var string = window.validate.string
+var util = window.validate.util
+
+var result = isValid('Test ValidateJS', [string.maxLength(15), util.isRequired])
 // result => true
 ```
 
