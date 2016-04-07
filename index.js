@@ -4,6 +4,14 @@ var validate = validatejs.validate
 var string = validatejs.string
 var util = validatejs.util
 
-var isvalid = validate(string.maxLength(15), util.isRequired)
-var result = isvalid('Test ValidateJS')
+var isValid = validatejs.isValid
+
+console.time('test')
+
+var result = isValid('Test ValidateJS', [string.minLength(5), string.maxLength(15), util.isRequired]);
 console.log(result)
+
+var resultSingleRule = isValid('Test ValidateJS Big String', string.maxLength(15));
+console.log(resultSingleRule)
+
+console.timeEnd('test')

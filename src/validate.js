@@ -1,4 +1,5 @@
 import {isNil} from './lib/isnil.js'
+import {_isArray} from './lib/array.js'
 import {reduce} from './lib/reduce.js'
 
 export * from './string'
@@ -24,3 +25,6 @@ export const validate =
         }
       }, true, fn)
     }
+
+export const isValid =
+  (v, r=[]) => (validate(...(_isArray(r) ? r : [r]))(v))
