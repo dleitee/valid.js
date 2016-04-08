@@ -25,6 +25,10 @@
  */
 
 export const reduce = (func, index, array) => {
+  if(Array.prototype.reduce) {
+    return Array.prototype.reduce.apply(array, [func, index])
+  }
+
   // Transform array to iterator es2015
   const iterator = array[Symbol.iterator]()
 
