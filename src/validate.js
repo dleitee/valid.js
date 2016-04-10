@@ -27,4 +27,4 @@ export const validate =
     }
 
 export const isValid =
-  (v, r=[]) => (validate(...(_isArray(r) ? r : [r]))(v))
+  (v, r = []) => (validate(...(_isArray(r) ? r : [r]))(v))

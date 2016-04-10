@@ -25,7 +25,7 @@
  */
 
 export const reduce = (func, index, array) => {
-  if(Array.prototype.reduce) {
+  if (Array.prototype.reduce) {
     return Array.prototype.reduce.apply(array, [func, index])
   }
 
