@@ -1,7 +1,7 @@
 {
   "name": "valid.js",
   "main": "./dist/validate.js",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "authors": [
     "Daniel Leite de Oliveira <dleitee@gmail.com>"
   ],
