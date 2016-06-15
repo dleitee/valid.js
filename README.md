@@ -1,5 +1,6 @@
 # valid.js
 [![Build Status](https://travis-ci.org/dleitee/valid.js.svg?branch=master)](https://travis-ci.org/dleitee/valid.js)
+
 A simple library for data validation.
 
 ## Install
