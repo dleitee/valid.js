@@ -3,7 +3,9 @@
   "version": "1.2.1",
   "description": "A simple library for data validation",
   "scripts": {
-    "test": "xo && mocha --compilers js:babel/register"
+    "prepublish": "npm test && gulp",
+    "test:lint": "xo",
+    "test": "mocha --compilers js:babel/register"
   },
   "repository": {
     "type": "git",
