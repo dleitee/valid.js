@@ -6,15 +6,15 @@
 *
 */
 
-import gulp from 'gulp'
-import uglify from 'gulp-uglify'
-import buffer from 'vinyl-buffer'
-import browserify from 'browserify'
-import babelify from 'babelify'
-import es6ify from 'es6ify'
-import deglobalify from 'deglobalify'
-import source from 'vinyl-source-stream'
-import connect from 'gulp-connect'
+import gulp from 'gulp';
+import uglify from 'gulp-uglify';
+import buffer from 'vinyl-buffer';
+import browserify from 'browserify';
+import babelify from 'babelify';
+import es6ify from 'es6ify';
+import deglobalify from 'deglobalify';
+import source from 'vinyl-source-stream';
+import connect from 'gulp-connect';
 
 gulp.task('browserify', () => {
   browserify({
@@ -35,15 +35,15 @@ gulp.task('browserify', () => {
   .pipe(buffer())
   .pipe(uglify())
   .pipe(gulp.dest('dist'))
-  .pipe(gulp.dest('public'))
-})
+  .pipe(gulp.dest('public'));
+});
 
 gulp.task('server', () => {
   connect.server({
     root: ['public', 'dist'],
     port: 8000,
     livereload: true
-  })
-})
+  });
+});
 
-gulp.task('default', ['browserify'], () => {})
+gulp.task('default', ['browserify'], () => {});
