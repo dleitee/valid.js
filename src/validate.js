@@ -11,20 +11,20 @@ export * from './creditCard';
 export * from './ip';
 
 export const validate =
-  (...fn) =>
-    value => {
-      if (isNil(value)) {
-        return false;
-      }
+    (...fn) =>
+        value => {
+            if (isNil(value)) {
+                return false;
+            }
 
-      return reduce((acc, x) => {
-        if (isNil(x)) {
-          throw new Error('The function for validation is null or undefined.');
-        } else {
-          return acc && x(value);
-        }
-      }, true, fn);
+            return reduce((acc, x) => {
+                if (isNil(x)) {
+                    throw new Error('The function for validation is null or undefined.');
+                } else {
+                    return acc && x(value);
+                }
+            }, true, fn);
     };
 
 export const isValid =
-  (v, r = []) => (validate(...(_isArray(r) ? r : [r]))(v));
+    (v, r = []) => (validate(...(_isArray(r) ? r : [r]))(v));
