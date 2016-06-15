@@ -1,6 +1,6 @@
 {
   "name": "valid.js",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A simple library for data validation",
   "scripts": {
     "prepublish": "npm test && gulp",
