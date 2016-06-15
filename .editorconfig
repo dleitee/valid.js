@@ -15,7 +15,7 @@ indent_size = 4
 
 # JS Files based on https://github.com/rwaldron/idiomatic.js
 [*.{js}]
-indent_size = 2
+indent_size = 4
 
 # JSON Files
 [*.{json,}]
