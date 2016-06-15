@@ -4,23 +4,19 @@
  * @params value
  * @return boolean
  */
-function isTrue(value) {
-  return value === true;
-}
+const isTrue = value => value === true;
 
 /*
  * Checks for false
  * @params value
  * @return boolean
  */
-function isFalse(value) {
-  return value === false;
-}
+const isFalse = value => value === false;
 
 /*
  * Export constant bool
  */
 export const bool = {
-  isTrue: isTrue,
-  isFalse: isFalse
+    isTrue: isTrue,
+    isFalse: isFalse
 };
