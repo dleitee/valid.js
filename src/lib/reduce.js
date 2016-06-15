@@ -25,19 +25,19 @@
  */
 
 export const reduce = (func, index, array) => {
-  if (Array.prototype.reduce) {
-    return Array.prototype.reduce.apply(array, [func, index]);
-  }
+    if (Array.prototype.reduce) {
+        return Array.prototype.reduce.apply(array, [func, index]);
+    }
 
-  // Transform array to iterator es2015
-  const iterator = array[Symbol.iterator]();
+    // Transform array to iterator es2015
+    const iterator = array[Symbol.iterator]();
 
-  // Recursive function
-  const go = (acc, iterable) => {
-    const {value, done} = iterable.next();
-    return done ? acc : go(func(acc, value), iterable);
-  };
+    // Recursive function
+    const go = (acc, iterable) => {
+        const {value, done} = iterable.next();
+        return done ? acc : go(func(acc, value), iterable);
+    };
 
-  // Call recursive function
-  return go(index, iterator);
+    // Call recursive function
+    return go(index, iterator);
 };
