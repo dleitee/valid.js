@@ -1,4 +1,4 @@
-import {_isDate} from './lib/date'
+import {_isDate} from './lib/date';
 
 /*
  * Checks for a 'date'
@@ -6,7 +6,7 @@ import {_isDate} from './lib/date'
  * @return boolean
  */
 function isDate(date) {
-  return _isDate(date)
+  return _isDate(date);
 }
 
 /*
@@ -15,7 +15,7 @@ function isDate(date) {
  * @return boolean
  */
 function maxDate(max = new Date(3000, 1, 1)) {
-  return value => _isDate(value) && value <= max
+  return value => _isDate(value) && value <= max;
 }
 
 /*
@@ -24,7 +24,7 @@ function maxDate(max = new Date(3000, 1, 1)) {
  * @return boolean
  */
 function minDate(min = new Date(1900, 1, 1)) {
-  return value => _isDate(value) && value >= min
+  return value => _isDate(value) && value >= min;
 }
 
 /*
@@ -35,7 +35,7 @@ function minDate(min = new Date(1900, 1, 1)) {
  */
 function between(min = new Date(1900, 1, 1), max = new Date(3000, 1, 1)) {
   return value => this.minDate(min)(value) &&
-                        this.maxDate(max)(value)
+                        this.maxDate(max)(value);
 }
 
 /*
@@ -46,4 +46,4 @@ export const date = {
   minDate: minDate,
   between: between,
   isDate: isDate
-}
+};

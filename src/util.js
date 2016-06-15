@@ -1,9 +1,9 @@
-import {isNil} from './lib/isnil.js'
-import {_isArray} from './lib/array.js'
-import {_isNumber} from './lib/number.js'
-import {_isObject} from './lib/object.js'
-import {_isString} from './lib/string.js'
-import {string} from './string.js'
+import {isNil} from './lib/isnil.js';
+import {_isArray} from './lib/array.js';
+import {_isNumber} from './lib/number.js';
+import {_isObject} from './lib/object.js';
+import {_isString} from './lib/string.js';
+import {string} from './string.js';
 
 /*
  * Checks for data
@@ -12,26 +12,26 @@ import {string} from './string.js'
  */
 function isRequired(value) {
   if (isNil(value)) {
-    return false
+    return false;
   }
 
   if (_isArray(value)) {
-    return value.length > 0
+    return value.length > 0;
   }
 
   if (_isNumber(value)) {
-    return value > 0
+    return value > 0;
   }
 
   if (_isObject(value)) {
-    return Object.keys(value).length > 0
+    return Object.keys(value).length > 0;
   }
 
   if (_isString(value)) {
-    return value.length > 0
+    return value.length > 0;
   }
 
-  return Boolean(value)
+  return Boolean(value);
 }
 
 /*
@@ -40,20 +40,20 @@ function isRequired(value) {
  * @return boolean
  */
 function isEmail(email) {
-  let sQtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]'
-  let sDtext = '[^\\x0d\\x5b-\\x5d\\x80-\\xff]'
-  let sAtom = '[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+'
-  let sQuotedPair = '\\x5c[\\x00-\\x7f]'
-  let sDomainLiteral = '\\x5b(' + sDtext + '|' + sQuotedPair + ')*\\x5d'
-  let sQuotedString = '\\x22(' + sQtext + '|' + sQuotedPair + ')*\\x22'
-  let sDomainRef = sAtom
-  let sSubDomain = '(' + sDomainRef + '|' + sDomainLiteral + ')'
-  let sWord = '(' + sAtom + '|' + sQuotedString + ')'
-  let sDomain = sSubDomain + '(\\x2e' + sSubDomain + ')*'
-  let sLocalPart = sWord + '(\\x2e' + sWord + ')*'
-  let sAddrSpec = sLocalPart + '\\x40' + sDomain
-  let sValidEmail = '^' + sAddrSpec + '$'
-  return string.regex(sValidEmail)(email)
+  let sQtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]';
+  let sDtext = '[^\\x0d\\x5b-\\x5d\\x80-\\xff]';
+  let sAtom = '[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+';
+  let sQuotedPair = '\\x5c[\\x00-\\x7f]';
+  let sDomainLiteral = '\\x5b(' + sDtext + '|' + sQuotedPair + ')*\\x5d';
+  let sQuotedString = '\\x22(' + sQtext + '|' + sQuotedPair + ')*\\x22';
+  let sDomainRef = sAtom;
+  let sSubDomain = '(' + sDomainRef + '|' + sDomainLiteral + ')';
+  let sWord = '(' + sAtom + '|' + sQuotedString + ')';
+  let sDomain = sSubDomain + '(\\x2e' + sSubDomain + ')*';
+  let sLocalPart = sWord + '(\\x2e' + sWord + ')*';
+  let sAddrSpec = sLocalPart + '\\x40' + sDomain;
+  let sValidEmail = '^' + sAddrSpec + '$';
+  return string.regex(sValidEmail)(email);
 }
 
 /**
@@ -67,8 +67,8 @@ function isEmail(email) {
  * @return boolean
  */
 function isURL(url) {
-  const regex = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i
-  return string.regex(regex)(url)
+  const regex = /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+  return string.regex(regex)(url);
 }
 
 /*
@@ -77,7 +77,7 @@ function isURL(url) {
  * @return boolean
  */
 function isCep(cep) {
-  return string.regex(/^[0-9]{5}-[0-9]{3}$/)(cep)
+  return string.regex(/^[0-9]{5}-[0-9]{3}$/)(cep);
 }
 
 /*
@@ -86,7 +86,7 @@ function isCep(cep) {
  * @return boolean
  */
 function isHexColor(color) {
-  return string.regex(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/)(color)
+  return string.regex(/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/)(color);
 }
 
 /*
@@ -96,9 +96,9 @@ function isHexColor(color) {
  * @return boolean
  */
 function isCpf(cpfNumber) {
-  let cpfRegex = /^(\d{3}[\.]?\d{3}[\.]?\d{3}[-]?\d{2})$/
+  let cpfRegex = /^(\d{3}[\.]?\d{3}[\.]?\d{3}[-]?\d{2})$/;
   if (cpfRegex.test(cpfNumber)) {
-    let cpf = cpfNumber.replace(/\.|-/g, '')
+    let cpf = cpfNumber.replace(/\.|-/g, '');
     if (cpf === '00000000000' ||
         cpf === '11111111111' ||
         cpf === '22222222222' ||
@@ -109,43 +109,43 @@ function isCpf(cpfNumber) {
         cpf === '77777777777' ||
         cpf === '88888888888' ||
         cpf === '99999999999') {
-      return false
+      return false;
     }
 
-    let final
-    let sum = 0
+    let final;
+    let sum = 0;
     for (let firstIndex = 0; firstIndex < 9; firstIndex++) {
-      sum += parseInt(cpf.charAt(firstIndex), 10) * (10 - firstIndex)
+      sum += parseInt(cpf.charAt(firstIndex), 10) * (10 - firstIndex);
     }
 
-    final = 11 - (sum % 11)
+    final = 11 - (sum % 11);
 
     if (final === 10 || final === 11) {
-      final = 0
+      final = 0;
     }
 
     if (final !== parseInt(cpf.charAt(9), 10)) {
-      return false
+      return false;
     }
 
-    sum = 0
+    sum = 0;
     for (let secondIndex = 0; secondIndex < 10; secondIndex++) {
-      sum += parseInt(cpf.charAt(secondIndex), 10) * (11 - secondIndex)
+      sum += parseInt(cpf.charAt(secondIndex), 10) * (11 - secondIndex);
     }
 
-    final = 11 - (sum % 11)
+    final = 11 - (sum % 11);
 
     if (final === 10 || final === 11) {
-      final = 0
+      final = 0;
     }
 
     if (final !== parseInt(cpf.charAt(10), 10)) {
-      return false
+      return false;
     }
 
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 /*
@@ -155,9 +155,9 @@ function isCpf(cpfNumber) {
  * @return boolean
  */
 function isCnpj(cnpjNumber) {
-  let cnpjRegex = /^(\d{2}[\.]?\d{3}[\.]?\d{3}[\/]?\d{4}[-]?\d{2})$/
+  let cnpjRegex = /^(\d{2}[\.]?\d{3}[\.]?\d{3}[\/]?\d{4}[-]?\d{2})$/;
   if (cnpjRegex.test(cnpjNumber)) {
-    let cnpj = cnpjNumber.replace(/\.|-|\//g, '')
+    let cnpj = cnpjNumber.replace(/\.|-|\//g, '');
     if (cnpj === '00000000000000' ||
         cnpj === '11111111111111' ||
         cnpj === '22222222222222' ||
@@ -168,47 +168,46 @@ function isCnpj(cnpjNumber) {
         cnpj === '77777777777777' ||
         cnpj === '88888888888888' ||
         cnpj === '99999999999999') {
-      return false
+      return false;
     }
 
-    let sum = 0
-    let length = 12
-    let num = cnpj.substring(0, length)
-    let digits = cnpj.substring(length)
-    let pos = length - 7
+    let sum = 0;
+    let length = 12;
+    let num = cnpj.substring(0, length);
+    let digits = cnpj.substring(length);
+    let pos = length - 7;
 
     for (let firstIndex = length; firstIndex >= 1; firstIndex--) {
-      sum += num.charAt(length - firstIndex) * pos--
+      sum += num.charAt(length - firstIndex) * pos--;
       if (pos < 2) {
-        pos = 9
+        pos = 9;
       }
     }
 
-    let results = sum % 11 < 2 ? 0 : 11 - sum % 11
+    let results = sum % 11 < 2 ? 0 : 11 - sum % 11;
     if (results !== parseInt(digits.charAt(0), 10)) {
-      console.log('if')
-      return false
+      return false;
     }
 
-    length += 1
-    num = cnpj.substring(0, length)
-    sum = 0
-    pos = length - 7
+    length += 1;
+    num = cnpj.substring(0, length);
+    sum = 0;
+    pos = length - 7;
 
     for (let secondIndex = length; secondIndex >= 1; secondIndex--) {
-      sum += num.charAt(length - secondIndex) * pos--
+      sum += num.charAt(length - secondIndex) * pos--;
       if (pos < 2) {
-        pos = 9
+        pos = 9;
       }
     }
 
-    results = sum % 11 < 2 ? 0 : 11 - sum % 11
+    results = sum % 11 < 2 ? 0 : 11 - sum % 11;
     if (results !== parseInt(digits.charAt(1), 10)) {
-      return false
+      return false;
     }
-    return true
+    return true;
   }
-  return false
+  return false;
 }
 
 /*
@@ -222,4 +221,4 @@ export const util = {
   isHexColor: isHexColor,
   isCpf: isCpf,
   isCnpj: isCnpj
-}
+};

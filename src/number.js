@@ -1,4 +1,4 @@
-import {_isNumber} from './lib/number'
+import {_isNumber} from './lib/number';
 
 /*
  * Checks for a 'Number'
@@ -6,7 +6,7 @@ import {_isNumber} from './lib/number'
  * @return boolean
  */
 function isNumber(number) {
-  return _isNumber(number)
+  return _isNumber(number);
 }
 
 /*
@@ -15,7 +15,7 @@ function isNumber(number) {
  * @return boolean
  */
 function maxNumber(maxValue = Number.MAX_VALUE) {
-  return value => _isNumber(value) && value <= maxValue
+  return value => _isNumber(value) && value <= maxValue;
 }
 
 /*
@@ -24,7 +24,7 @@ function maxNumber(maxValue = Number.MAX_VALUE) {
  * @return boolean
  */
 function minNumber(minValue = Number.MIN_VALUE) {
-  return value => _isNumber(value) && value >= minValue
+  return value => _isNumber(value) && value >= minValue;
 }
 
 /*
@@ -35,7 +35,7 @@ function minNumber(minValue = Number.MIN_VALUE) {
  */
 function between(minValue = Number.MIN_VALUE, maxValue = Number.MAX_VALUE) {
   return value => this.minNumber(minValue)(value) &&
-                        this.maxNumber(maxValue)(value)
+                        this.maxNumber(maxValue)(value);
 }
 
 /*
@@ -46,4 +46,4 @@ export const number = {
   minNumber: minNumber,
   between: between,
   isNumber: isNumber
-}
+};

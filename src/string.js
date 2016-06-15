@@ -1,5 +1,5 @@
-import {isNil} from './lib/isnil.js'
-import {_isString} from './lib/string'
+import {isNil} from './lib/isnil.js';
+import {_isString} from './lib/string';
 
 /*
  * Checks for a 'String'
@@ -7,7 +7,7 @@ import {_isString} from './lib/string'
  * @return boolean
  */
 function isString(string) {
-  return _isString(string)
+  return _isString(string);
 }
 
 /*
@@ -17,7 +17,7 @@ function isString(string) {
  * @return boolean
  */
 function minLength(min = Number.MIN_VALUE) {
-  return string => _isString(string) && string.length >= min
+  return string => _isString(string) && string.length >= min;
 }
 
 /*
@@ -28,9 +28,9 @@ function minLength(min = Number.MIN_VALUE) {
  */
 function maxLength(max = Number.MAX_VALUE) {
   if (isNil(max)) {
-    max = Number.MAX_VALUE
+    max = Number.MAX_VALUE;
   }
-  return string => _isString(string) && string.length <= max
+  return string => _isString(string) && string.length <= max;
 }
 
 /*
@@ -40,7 +40,7 @@ function maxLength(max = Number.MAX_VALUE) {
  * @return boolean
  */
 function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
-  return string => this.minLength(min)(string) && this.maxLength(max)(string)
+  return string => this.minLength(min)(string) && this.maxLength(max)(string);
 }
 
 /*
@@ -52,9 +52,9 @@ function length(min = Number.MIN_VALUE, max = Number.MAX_VALUE) {
  */
 function regex(expression) {
   return string => {
-    let reg = new RegExp(expression)
-    return reg.test(string)
-  }
+    let reg = new RegExp(expression);
+    return reg.test(string);
+  };
 }
 
 /*
@@ -66,4 +66,4 @@ export const string = {
   maxLength: maxLength,
   length: length,
   regex: regex
-}
+};
