@@ -1,0 +1,8 @@
+verbose: false
+instrumentation:
+  root: ./src
+  excludes: ["**/public/**", "**/dist/**"]
+  include-all-sources: true
+reporting:
+  reports:
+    - html
