@@ -1,4 +1,3 @@
-import {isNil} from './lib/isnil.js';
 import {_isArray} from './lib/array.js';
 import {_isNumber} from './lib/number.js';
 import {_isObject} from './lib/object.js';
@@ -11,9 +10,6 @@ import {string} from './string.js';
  * @return boolean
  */
 const isRequired = value => {
-    if (isNil(value)) {
-      return false;
-    }
     if (_isArray(value)) {
       return value.length > 0;
     }
