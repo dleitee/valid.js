@@ -1,6 +1,7 @@
 # valid.js
 [![Build Status](https://travis-ci.org/dleitee/valid.js.svg?branch=master)](https://travis-ci.org/dleitee/valid.js)
 [![Coverage Status](https://coveralls.io/repos/github/dleitee/valid.js/badge.svg?branch=master)](https://coveralls.io/github/dleitee/valid.js?branch=master)
+[![Code Climate](https://codeclimate.com/github/dleitee/valid.js/badges/gpa.svg)](https://codeclimate.com/github/dleitee/valid.js)
 
 A simple library for data validation.
 
