@@ -26,5 +26,4 @@ export const validate =
             }, true, fn);
     };
 
-export const isValid =
-    (v, r = []) => (validate(...(_isArray(r) ? r : [r]))(v));
+export const isValid = (v, r = []) => (validate(...(_isArray(r) ? r : [r]))(v));
