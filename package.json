@@ -1,6 +1,6 @@
 {
   "name": "valid.js",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A simple library for data validation",
   "scripts": {
     "prepublish": "npm test && gulp",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/dleitee/valid.js.git"
   },
-  "main": "dist/validate.js",
+  "main": "./src/validate.js",
   "keywords": [
     "javascript",
     "es6",
