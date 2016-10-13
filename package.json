@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/dleitee/valid.js.git"
   },
-  "main": "dist/validate.js",
+  "main": "./src/validate.js",
   "keywords": [
     "javascript",
     "es6",
