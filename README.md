@@ -1,4 +1,7 @@
-# valid.js
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/4838076/28783446-c16cb57c-75e6-11e7-8a38-882954701265.png">
+</p>
+
 [![Build Status](https://travis-ci.org/dleitee/valid.js.svg?branch=master)](https://travis-ci.org/dleitee/valid.js)
 [![Coverage Status](https://coveralls.io/repos/github/dleitee/valid.js/badge.svg?branch=master)](https://coveralls.io/github/dleitee/valid.js?branch=master)
 [![Code Climate](https://codeclimate.com/github/dleitee/valid.js/badges/gpa.svg)](https://codeclimate.com/github/dleitee/valid.js)
