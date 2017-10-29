@@ -144,6 +144,21 @@ describe('Functions Util', () => {
             let result = validate(util.isEmail);
             expect(result('" "@example.org')).to.be.ok();
         });
+
+        it('should be true when email contains unicode characters on local part [üñîçøðé@example.com]', () => {
+            let result = validate(util.isEmail);
+            expect(result('üñîçøðé@example.com')).to.be.ok();
+        });
+
+        it('should be true when email contains unicode characters on domain part [üñîçøðé@üñîçøðé.com]', () => {
+            let result = validate(util.isEmail);
+            expect(result('üñîçøðé@üñîçøðé.com')).to.be.ok();
+        });
+
+        it('should be true when email contains quoted unicode text ["uñicødé"@üñîçøðé.com]', () => {
+            let result = validate(util.isEmail);
+            expect(result('"uñicødé"@üñîçøðé.com')).to.be.ok();
+        });
     });
 
     describe('#isCep(value)', () => {
