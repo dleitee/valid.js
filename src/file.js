@@ -29,8 +29,7 @@ const extensionFile = exts => {
 const maxSizeFile = (maxSizeFileValue = Number.MAX_VALUE) => {
     return (file=>{
         if(_isNumber(maxSizeFileValue) && _isFile(file))
-            return ( (file.size/1024) <= maxSizeFileValue );
-        return false; 
+            return ( (file.size/1024) <= maxSizeFileValue ); 
     });
 };
 
