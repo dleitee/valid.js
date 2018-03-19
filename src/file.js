@@ -14,9 +14,8 @@ const extensionFile = exts => {
         value = _isString(value) ? value: (
             _isFile(value) ? value.name : false   
         );
-        if(value===false) return false;
-        let ext = value.substring(value.lastIndexOf('.') + 1);
-        return ((exts.indexOf(ext)>=0) ? true: false);
+        let ext = (value===false) ? false: value.substring(value.lastIndexOf('.') + 1);
+        return (ext===false ? false :exts.indexOf(ext)>=0);
     });
 };
 
@@ -29,13 +28,9 @@ const extensionFile = exts => {
 
 const maxSizeFile = (maxSizeFileValue = Number.MAX_VALUE) => {
     return (file=>{
-        if(!_isNumber(maxSizeFileValue)){
-            return false;
-        }
-        if(_isFile(file)){
-            return ((file.size/1024) > maxSizeFileValue) ? false:true; 
-        }
-        return false;
+        if(_isNumber(maxSizeFileValue) && _isFile(file))
+            return ( (file.size/1024) <= maxSizeFileValue );
+        return false; 
     });
 };
 
