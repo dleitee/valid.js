@@ -9,15 +9,18 @@ export * from './number';
 export * from './date';
 export * from './creditCard';
 export * from './ip';
+export * from './file';
 
 export const validate =
     (...fn) =>
         value => {
+            // console.log(value);
             if (isNil(value)) {
                 return false;
             }
 
             return reduce((acc, x) => {
+                // console.log(x);
                 if (isNil(x)) {
                     throw new Error('The function for validation is null or undefined.');
                 } else {
