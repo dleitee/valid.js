@@ -61,9 +61,9 @@ var result = isValid('Test ValidateJS', [string.maxLength(15), util.isRequired])
 ```
 
 ```javascript
-var validate = validate.validate
-var string = validate.string
-var util = validate.util
+var validate = valid.js.validate
+var string = valid.js.string
+var util = valid.js.util
 
 var testIsValid = validate(string.maxLength(15), util.isRequired)
 var result = testIsValid('Test ValidateJS')
@@ -71,9 +71,9 @@ var result = testIsValid('Test ValidateJS')
 ```
 OR
 ```javascript
-var validate = window.validate.validate
-var string = window.validate.string
-var util = window.validate.util
+var validate = valid.js.validate
+var string = window.valid.js.string
+var util = window.valid.js.util
 
 var testIsValid = validate(string.maxLength(15), util.isRequired)
 var result = testIsValid('Test ValidateJS')
@@ -81,10 +81,10 @@ var result = testIsValid('Test ValidateJS')
 ```
 OR
 ```javascript
-var isValid = window.validate.isValid
-var string = window.validate.string
-var util = window.validate.util
-
+var isValid = window.valid.js.isValid
+var string = window.valid.js.string
+var util = window.valid.js.util
+    
 var result = isValid('Test ValidateJS', [string.maxLength(15), util.isRequired])
 // result => true
 ```
