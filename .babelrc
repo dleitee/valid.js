@@ -1,1 +1,17 @@
-{ "presets": ["es2015"] }
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+    }]
+  ],
+  "env": {
+    "rollup": {
+      "presets": [
+        ["env", {
+          "modules": false,
+        }]
+      ],
+      "plugins": ["external-helpers"]
+    }
+  }
+}

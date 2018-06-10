@@ -3,16 +3,14 @@
   "main": "./lib/valid.js",
   "version": "1.2.5",
   "description": "A simple library for data validation",
-  "scripts": {},
+  "scripts": {
+    "build": "NODE_ENV=rollup rollup -c"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dleitee/valid.js.git"
   },
-  "keywords": [
-    "javascript",
-    "library",
-    "validate"
-  ],
+  "keywords": ["javascript", "library", "validate"],
   "author": {
     "name": "Daniel Leite de Oliveira",
     "email": "dleitee@gmail.com",
@@ -22,8 +20,16 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.0.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^23.1.0",
+    "prettier": "^1.13.5",
     "rollup": "^0.60.1",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-commonjs": "^9.1.3",
