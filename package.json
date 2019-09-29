@@ -37,7 +37,7 @@
     "coveralls": "^2.11.9",
     "deglobalify": "^0.2.0",
     "es6ify": "^1.6.0",
-    "eslint": "^5.0.0",
+    "eslint": "^6.5.0",
     "expect.js": "^0.3.1",
     "gulp": "^3.9.0",
     "gulp-connect": "^5.6.1",
