@@ -34,7 +34,7 @@
     "babel-register": "^6.7.2",
     "babelify": "^10.0.0",
     "browserify": "^11.2.0",
-    "coveralls": "^2.11.9",
+    "coveralls": "^3.0.10",
     "deglobalify": "^0.2.0",
     "es6ify": "^1.6.0",
     "eslint": "^5.0.0",
