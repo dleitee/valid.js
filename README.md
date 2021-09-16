@@ -128,6 +128,9 @@ Also available for [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)
     - [x] isDiners
     - [x] isAmex
     - [x] isCreditCard
+- [x] [File](https://github.com/dleitee/valid.js/blob/master/docs/file.md)
+    - [x] extensionFile
+    - [x] maxSizeFile
 
 # Contributing
 
